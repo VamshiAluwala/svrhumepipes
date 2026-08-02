@@ -1,0 +1,93 @@
+export const site = {
+  name: "SVR Hume Pipes",
+  legalName: "Sri Venkateshwara Hume Pipes",
+  tagline: "Telangana's Trusted Manufacturer of RCC Hume Pipes",
+  description:
+    "SVR Hume Pipes is a leading manufacturer and supplier of ISO-certified RCC Hume Pipes in Hyderabad, Telangana. Serving PWD, Municipal, Irrigation and Infrastructure projects across South India.",
+  url: "https://svrhumepipes.com",
+  domain: "svrhumepipes.com",
+  email: "srinivasena9999@gmail.com",
+  phone: "+91-9949519444",
+  phoneDisplay: "+91 99495 19444",
+  whatsapp: "919949519444",
+  founded: "2009",
+  gst: "36AARFE2237K1JN",
+  address: {
+    street: "Lalgadi Malakpet",
+    locality: "Medchal-Malkajgiri",
+    city: "Hyderabad",
+    region: "Telangana",
+    postalCode: "500101",
+    country: "IN",
+    countryName: "India",
+    plusCode: "JHM9+GW Lalgadi Malakpet, Telangana",
+    latitude: 17.6342724,
+    longitude: 78.5687868,
+    mapUrl:
+      "https://www.google.com/maps/place/SVR+HUME+PIPES/@17.6342724,78.5687868,17.42z",
+    mapEmbed:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.6!2d78.5687868!3d17.6342724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb81819d3681ab%3A0xe9dc9409a15969f!2sSVR%20HUME%20PIPES!5e0!3m2!1sen!2sin!4v1700000000000",
+  },
+  hours: {
+    weekdays: "Open 24 hours · All days of the week",
+    sunday: "Site open 24 × 7 — call anytime",
+    schemaOpens: "00:00",
+    schemaCloses: "23:59",
+  },
+  social: {
+    instagram: "https://www.instagram.com/svrhumepipes",
+  },
+  serviceAreas: [
+    "Hyderabad",
+    "Secunderabad",
+    "Rangareddy",
+    "Medchal",
+    "Sangareddy",
+    "Warangal",
+    "Karimnagar",
+    "Nizamabad",
+    "Vijayawada",
+    "Guntur",
+    "Kurnool",
+    "Anantapur",
+    "Telangana",
+    "Andhra Pradesh",
+    "Karnataka",
+  ],
+  keywords: [
+    "hume pipes",
+    "hume pipes hyderabad",
+    "hume pipes in hyderabad",
+    "hume pipes telangana",
+    "rcc pipes",
+    "rcc pipes hyderabad",
+    "rcc hume pipes",
+    "RCC hume pipes manufacturer hyderabad",
+    "top hume pipes manufacturer telangana",
+    "best hume pipes manufacturer hyderabad",
+    "hume pipe manufacturers in hyderabad",
+    "rcc pipes supplier telangana",
+    "cement pipes hyderabad",
+    "concrete pipes hyderabad",
+    "drainage pipes manufacturer hyderabad",
+    "NP2 hume pipes",
+    "NP3 hume pipes",
+    "NP4 hume pipes",
+    "sewer pipes hyderabad",
+    "IS 458 hume pipes",
+    "spun concrete pipes",
+    "culvert pipes hyderabad",
+    "hume pipe price hyderabad",
+    "SVR hume pipes",
+    "SVR RCC hume pipes",
+    "Sri Venkateshwara hume pipes",
+    "venkateshwara hume pipes hyderabad",
+  ],
+} as const;
+
+export const whatsappLink = (
+  msg = "Hi SVR Hume Pipes 👋, I'm interested in RCC hume pipes. Please share pricing and availability."
+) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+export const telLink = `tel:${site.phone.replace(/[^\d+]/g, "")}`;
+export const mailLink = `mailto:${site.email}`;
