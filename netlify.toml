@@ -1,0 +1,11 @@
+[build]
+  command = "next build"
+
+# Netlify secret scanning false-positives:
+#   CALLMEBOT_PHONE  -> your public WhatsApp number, present in src/lib/site.ts
+#   LEAD_EMAIL_FROM  -> default sender address, present in src/lib/leads.ts
+# Both are public, non-secret values that legitimately live in the code, so we
+# omit them from the scanner. Real secrets (RESEND_API_KEY, CALLMEBOT_API_KEY)
+# remain scanned.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "CALLMEBOT_PHONE,LEAD_EMAIL_FROM"
