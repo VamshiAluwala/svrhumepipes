@@ -120,6 +120,38 @@ export function websiteSchema() {
   };
 }
 
+export function webPageSchema({
+  path = "/",
+  name,
+  description,
+  datePublished = "2025-07-15",
+  dateModified,
+}: {
+  path?: string;
+  name: string;
+  description: string;
+  datePublished?: string;
+  dateModified: string;
+}) {
+  const url = `${site.url}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    description,
+    inLanguage: "en-IN",
+    isPartOf: { "@id": `${site.url}/#website` },
+    about: { "@id": `${site.url}/#organization` },
+    author: { "@id": `${site.url}/#organization` },
+    publisher: { "@id": `${site.url}/#organization` },
+    primaryImageOfPage: `${site.url}/og/default.jpg`,
+    datePublished,
+    dateModified,
+  };
+}
+
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

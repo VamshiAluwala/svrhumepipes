@@ -14,14 +14,18 @@ import { Certifications } from "@/components/Certifications";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { SizeEstimator } from "@/components/SizeEstimator";
 import { Reveal } from "@/components/Reveal";
-import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from "@/lib/schema";
 import { site, telLink, whatsappLink } from "@/lib/site";
 import { industries, whyChooseUs, homeFaqs } from "@/data/industries";
 
+// Bump this when the home page content is meaningfully updated.
+const LAST_UPDATED = "2026-08-01";
+const LAST_UPDATED_LABEL = "August 2026";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Hume Pipes in Hyderabad – Top RCC Hume Pipe Manufacturer",
+  title: "Hume Pipes in Hyderabad – RCC Pipe Manufacturer",
   description:
-    "Looking for hume pipes in Hyderabad? SVR Hume Pipes is a top RCC hume pipe manufacturer & supplier in Telangana. IS 458:2003 NP2, NP3 & NP4 pipes, 150mm–2200mm. Trusted by PWD, GHMC, HMDA & HMWSSB. Open 24 hours. ☎ +91 99495 19444",
+    "Top RCC hume pipe manufacturer in Hyderabad. ISO-certified NP2, NP3 & NP4 pipes (150–2200 mm) to IS 458:2003, with 24×7 dispatch across Telangana.",
   path: "/",
   keywords: [
     "hume pipes hyderabad",
@@ -40,6 +44,13 @@ export default function HomePage() {
     <>
       <JsonLd
         data={[
+          webPageSchema({
+            path: "/",
+            name: "Hume Pipes in Hyderabad – RCC Pipe Manufacturer | SVR Hume Pipes",
+            description:
+              "Top RCC hume pipe manufacturer in Hyderabad. ISO-certified NP2, NP3 & NP4 pipes (150–2200 mm) to IS 458:2003, with 24×7 dispatch across Telangana.",
+            dateModified: LAST_UPDATED,
+          }),
           breadcrumbSchema([{ name: "Home", path: "/" }]),
           faqSchema(homeFaqs),
           serviceSchema(
@@ -87,9 +98,9 @@ export default function HomePage() {
               </span>
             </div>
             <h1 className="font-serif text-[2.6rem] sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tightest">
-              Engineered strong.<br />
-              <span className="text-brand-500 italic font-medium">Built to outlast</span><br />
-              generations.
+              RCC Hume Pipes<br />
+              in Hyderabad,<br />
+              <span className="text-brand-500 italic font-medium">built to outlast.</span>
             </h1>
             <div className="mt-4 lg:mt-5 h-px w-24 bg-gradient-to-r from-brand-500 to-transparent" />
             <p className="mt-4 lg:mt-5 text-base lg:text-lg text-ivory-200/85 leading-relaxed max-w-xl">
@@ -163,6 +174,75 @@ export default function HomePage() {
 
       {/* Client Marquee */}
       <ClientsMarquee />
+
+      {/* ══════════════════════════════════════════════════════════════
+          QUICK OVERVIEW — AI/answer-engine friendly summary + key facts
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="bg-white py-12 lg:py-16 border-b border-ivory-300">
+        <Container>
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12">
+            {/* Summary + definition */}
+            <div>
+              <div className="eyebrow">Overview</div>
+              <h2 className="mt-4 font-serif text-2xl lg:text-3xl font-bold text-steel-900 tracking-tightest">
+                What are hume pipes, and who is SVR Hume Pipes for?
+              </h2>
+              <p className="mt-5 text-steel-700 leading-relaxed">
+                <strong>Hume pipes</strong> are spun-cast <strong>reinforced cement
+                concrete (RCC) pipes</strong> used for storm-water drainage, sewerage,
+                road culverts and irrigation. <strong>SVR Hume Pipes (Sri Venkateshwara
+                Hume Pipes)</strong> is a Hyderabad-based manufacturer that has supplied
+                ISO-certified RCC hume pipes across Telangana and Andhra Pradesh since
+                2009.
+              </p>
+              <p className="mt-4 text-steel-700 leading-relaxed">
+                <strong>Bottom line:</strong> if you need <strong>NP2, NP3 or NP4 hume
+                pipes from 150 mm to 2200 mm</strong> made to <strong>IS&nbsp;458:2003</strong>,
+                delivered with your own hydra-crane unloading and 24×7 dispatch, SVR is a
+                trusted local supplier.
+              </p>
+              <p className="mt-4 text-steel-700 leading-relaxed">
+                <strong>Who it&apos;s for:</strong> government departments (PWD, GHMC, HMDA,
+                HMWSSB), highway and irrigation contractors (NHAI, Kaleshwaram), and
+                builders needing certified drainage, sewer and culvert pipes.
+              </p>
+              <p className="mt-5 text-xs uppercase tracking-widest text-steel-500">
+                Last updated: {LAST_UPDATED_LABEL}
+              </p>
+            </div>
+
+            {/* Key facts list */}
+            <div className="bg-ivory-50 border border-ivory-300 p-6 lg:p-8">
+              <h3 className="font-serif text-lg font-bold text-steel-900 tracking-tightest">
+                Key facts at a glance
+              </h3>
+              <ul className="mt-5 space-y-3 text-sm text-steel-700">
+                {[
+                  ["Product", "RCC hume pipes — NP2, NP3 & NP4 (plain, socket & spigot)"],
+                  ["Sizes", "150 mm to 2200 mm diameter"],
+                  ["Standard", "IS 458:2003 · ISO 9001 certified"],
+                  ["Plant", "Lalgadi Malakpet, Medchal–Malkajgiri, Hyderabad"],
+                  ["Delivery", "Own trailer fleet + hydra-crane · open 24×7"],
+                  ["Serves", "Telangana, Andhra Pradesh & Karnataka"],
+                ].map(([k, v]) => (
+                  <li key={k} className="flex gap-3">
+                    <span className="text-brand-600 shrink-0">◆</span>
+                    <span>
+                      <strong className="text-steel-900">{k}:</strong> {v}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={telLink}
+                className="mt-6 inline-flex items-center gap-2 text-brand-700 hover:text-brand-800 font-semibold uppercase text-xs tracking-widest border-b-2 border-brand-500 pb-1 transition"
+              >
+                ☎ {site.phoneDisplay} · Get a price
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
 
       {/* ══════════════════════════════════════════════════════════════
           STATS DASHBOARD — animated counters
@@ -265,6 +345,77 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link href="/products/rcc-hume-pipes" className="btn-ivory">View full specifications →</Link>
           </div>
+        </Container>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════
+          NP2 vs NP3 vs NP4 — comparison / decision support (AEO)
+      ══════════════════════════════════════════════════════════════ */}
+      <section className="py-12 lg:py-24 bg-white">
+        <Container>
+          <div className="max-w-3xl">
+            <div className="eyebrow">Choosing a class</div>
+            <h2 className="mt-4 font-serif text-3xl lg:text-4xl font-bold text-steel-900 tracking-tightest">
+              NP2 vs NP3 vs NP4 hume pipes — which class do you need?
+            </h2>
+            <p className="mt-4 text-steel-700 leading-relaxed">
+              All three are reinforced, non-pressure RCC hume pipes made to IS&nbsp;458:2003.
+              The difference is load-bearing strength — choose the class from the traffic
+              and burial load the pipe will carry.
+            </p>
+          </div>
+
+          <div className="mt-8 overflow-x-auto border border-ivory-300">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <thead className="bg-steel-900 text-white">
+                <tr>
+                  <th className="p-4 font-semibold">Class</th>
+                  <th className="p-4 font-semibold">Load / duty</th>
+                  <th className="p-4 font-semibold">Best for</th>
+                  <th className="p-4 font-semibold">Typical sizes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ivory-300">
+                <tr>
+                  <td className="p-4 font-bold text-steel-900">NP2</td>
+                  <td className="p-4 text-steel-700">Light-duty, non-pressure</td>
+                  <td className="p-4 text-steel-700">
+                    House connections, field &amp; cross drains, light-traffic drainage
+                  </td>
+                  <td className="p-4 text-steel-700">150–1200 mm</td>
+                </tr>
+                <tr className="bg-ivory-50">
+                  <td className="p-4 font-bold text-steel-900">
+                    NP3
+                    <span className="ml-2 rounded-sm bg-brand-100 text-brand-700 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5">
+                      Most common
+                    </span>
+                  </td>
+                  <td className="p-4 text-steel-700">Medium–heavy duty, non-pressure</td>
+                  <td className="p-4 text-steel-700">
+                    Road culverts, storm-water &amp; sewer lines under regular traffic
+                  </td>
+                  <td className="p-4 text-steel-700">150–2200 mm</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-bold text-steel-900">NP4</td>
+                  <td className="p-4 text-steel-700">Heavy-duty, non-pressure (highest RCC class)</td>
+                  <td className="p-4 text-steel-700">
+                    Highways, rail crossings, deep burial and high fill loads
+                  </td>
+                  <td className="p-4 text-steel-700">300–2200 mm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs text-steel-500 leading-relaxed">
+            Exact 3-edge bearing strengths vary by diameter per the IS&nbsp;458:2003 load
+            tables. Not sure which class your project needs?{" "}
+            <a href={telLink} className="text-brand-700 font-semibold border-b border-brand-500">
+              Call {site.phoneDisplay}
+            </a>{" "}
+            and we&apos;ll advise.
+          </p>
         </Container>
       </section>
 
@@ -406,8 +557,10 @@ export default function HomePage() {
                 key={f.q}
                 className="group border border-ivory-300 bg-white p-6 open:shadow-classic open:border-brand-300 transition"
               >
-                <summary className="cursor-pointer list-none flex items-start justify-between gap-4 font-serif font-semibold text-steel-900 text-lg tracking-tightest">
-                  <span>{f.q}</span>
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
+                  <h3 className="m-0 font-serif font-semibold text-steel-900 text-lg tracking-tightest">
+                    {f.q}
+                  </h3>
                   <span className="text-brand-600 text-2xl transition-transform group-open:rotate-45 shrink-0 font-light">+</span>
                 </summary>
                 <p className="mt-4 text-steel-700 leading-relaxed">{f.a}</p>
