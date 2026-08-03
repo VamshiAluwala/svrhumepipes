@@ -104,8 +104,10 @@ export default function HomePage() {
             </h1>
             <div className="mt-4 lg:mt-5 h-px w-24 bg-gradient-to-r from-brand-500 to-transparent" />
             <p className="mt-4 lg:mt-5 text-base lg:text-lg text-ivory-200/85 leading-relaxed max-w-xl">
-              Telangana's trusted RCC hume pipe manufacturer for{" "}
-              <strong className="text-white">15+ years</strong>.
+              <strong className="text-white">In short:</strong> SVR Hume Pipes manufactures
+              ISO-certified RCC hume pipes — NP2, NP3 &amp; NP4, 150–2200 mm to IS&nbsp;458:2003 —
+              delivered 24×7 across Telangana. Trusted by contractors and government
+              departments for <strong className="text-white">15+ years</strong>.
             </p>
 
             {/* Trust badges */}
@@ -551,20 +553,14 @@ export default function HomePage() {
             title="Everything you need to know"
             subtitle="Answers to the most common queries we receive from contractors, engineers and government departments."
           />
-          <div className="mt-14 max-w-3xl mx-auto space-y-3">
+          <div className="mt-14 max-w-3xl mx-auto space-y-4">
             {homeFaqs.map((f) => (
-              <details
-                key={f.q}
-                className="group border border-ivory-300 bg-white p-6 open:shadow-classic open:border-brand-300 transition"
-              >
-                <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
-                  <h3 className="m-0 font-serif font-semibold text-steel-900 text-lg tracking-tightest">
-                    {f.q}
-                  </h3>
-                  <span className="text-brand-600 text-2xl transition-transform group-open:rotate-45 shrink-0 font-light">+</span>
-                </summary>
-                <p className="mt-4 text-steel-700 leading-relaxed">{f.a}</p>
-              </details>
+              <div key={f.q} className="border border-ivory-300 bg-white p-6">
+                <h3 className="font-serif font-semibold text-steel-900 text-lg tracking-tightest">
+                  {f.q}
+                </h3>
+                <p className="mt-3 text-steel-700 leading-relaxed">{f.a}</p>
+              </div>
             ))}
           </div>
         </Container>
