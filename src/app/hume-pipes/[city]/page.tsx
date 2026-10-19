@@ -81,7 +81,8 @@ export default function LocationPage({ params }: Params) {
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-steel-950 text-white pt-6 pb-10 lg:pt-10 lg:pb-16">
-        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:-right-72 lg:-top-48 lg:h-[680px] lg:w-[680px] lg:opacity-60" />
+        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:right-auto lg:top-auto lg:-left-64 lg:-bottom-80 lg:h-[720px] lg:w-[720px] lg:opacity-30" />
+        <SpunPipe id="sp2" className="hidden lg:block -right-72 -top-48 h-[680px] w-[680px] opacity-60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(2,132,199,0.18),transparent)] pointer-events-none" />
         <Container className="relative">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-12 items-center">

@@ -4,29 +4,29 @@ import { cn } from "@/lib/cn";
 // centrifugal motion arcs. Pure SVG + CSS transforms (GPU-composited).
 const bars = Array.from({ length: 28 }, (_, i) => (i / 28) * Math.PI * 2);
 
-export function SpunPipe({ className }: { className?: string }) {
+export function SpunPipe({ className, id = "sp" }: { className?: string; id?: string }) {
   return (
     <div className={cn("pointer-events-none absolute", className)} aria-hidden="true">
       <svg viewBox="0 0 400 400" className="h-full w-full">
         <defs>
-          <radialGradient id="sp-wall" cx="50%" cy="50%" r="50%">
+          <radialGradient id={`${id}-wall`} cx="50%" cy="50%" r="50%">
             <stop offset="62%" stopColor="#3f3f46" />
             <stop offset="80%" stopColor="#71717a" />
             <stop offset="100%" stopColor="#27272a" />
           </radialGradient>
-          <radialGradient id="sp-bore" cx="42%" cy="40%" r="60%">
+          <radialGradient id={`${id}-bore`} cx="42%" cy="40%" r="60%">
             <stop offset="0%" stopColor="#0c4a6e" stopOpacity="0.55" />
             <stop offset="100%" stopColor="#09090b" />
           </radialGradient>
-          <pattern id="sp-grain" width="6" height="6" patternUnits="userSpaceOnUse">
+          <pattern id={`${id}-grain`} width="6" height="6" patternUnits="userSpaceOnUse">
             <circle cx="1" cy="1" r="0.6" fill="#fff" opacity="0.08" />
             <circle cx="4" cy="3.5" r="0.5" fill="#000" opacity="0.2" />
           </pattern>
         </defs>
 
         {/* concrete wall */}
-        <circle cx="200" cy="200" r="196" fill="url(#sp-wall)" />
-        <circle cx="200" cy="200" r="196" fill="url(#sp-grain)" />
+        <circle cx="200" cy="200" r="196" fill={`url(#${id}-wall)`} />
+        <circle cx="200" cy="200" r="196" fill={`url(#${id}-grain)`} />
         <circle cx="200" cy="200" r="196" fill="none" stroke="#a1a1aa" strokeOpacity="0.35" strokeWidth="1.5" />
 
         {/* steel cage, spins like the mould */}
@@ -38,7 +38,7 @@ export function SpunPipe({ className }: { className?: string }) {
         </g>
 
         {/* bore */}
-        <circle cx="200" cy="200" r="146" fill="url(#sp-bore)" />
+        <circle cx="200" cy="200" r="146" fill={`url(#${id}-bore)`} />
         <circle cx="200" cy="200" r="146" fill="none" stroke="#e4e4e7" strokeOpacity="0.25" strokeWidth="1" />
 
         {/* centrifugal motion arcs */}
