@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { CloseIcon } from "./Icons";
 
 type Props = {
   src: string;
@@ -72,9 +73,9 @@ export function ZoomableFigure({ src, title, category, width, height }: Props) {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close"
-            className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white text-xl hover:bg-white/20 transition"
+            className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"
           >
-            ✕
+            <CloseIcon />
           </button>
           <Image
             src={src}

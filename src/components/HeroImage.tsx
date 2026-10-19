@@ -78,8 +78,8 @@ export function HeroImage({
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-steel-900/70 to-transparent" />
         </>
       )}
-      <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-sm bg-brand-600/95 backdrop-blur px-2.5 py-1 text-white text-[10px] font-bold uppercase tracking-widest shadow-lg">
-        <span className="w-1 h-1 rounded-full bg-white" />
+      <div className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-steel-900 text-xs font-semibold shadow-lg">
+        <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
         SVR Hume Pipes
       </div>
     </div>

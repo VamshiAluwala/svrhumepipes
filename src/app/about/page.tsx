@@ -9,6 +9,8 @@ import { Reveal } from "@/components/Reveal";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { stats } from "@/data/industries";
+import { SpunPipe } from "@/components/SpunPipe";
+import { CheckIcon, EyeIcon, TargetIcon } from "@/components/Icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Us - Sri Venkateshwara Hume Pipes",
@@ -36,16 +38,17 @@ export default function AboutPage() {
     <>
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
-      <section className="bg-gradient-to-br from-steel-900 via-brand-800 to-brand-700 text-white py-14 lg:py-20">
-        <Container className="grid lg:grid-cols-2 gap-10 items-center">
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white py-14 lg:py-20">
+        <SpunPipe className="-right-24 -top-20 h-[320px] w-[320px] opacity-30 lg:-right-16 lg:-top-32 lg:h-[560px] lg:w-[560px]" />
+        <Container className="relative grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-block rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-semibold mb-4">
+            <div className="inline-block rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1 text-xs font-medium text-ivory-200/90 mb-4">
               About Us · Since 2009
             </div>
             <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">
               Building South India's infrastructure, one pipe at a time
             </h1>
-            <p className="mt-4 text-brand-100 text-lg">
+            <p className="mt-4 text-ivory-200/80 text-lg">
               Sri Venkateshwara Hume Pipes (SVR) is a Hyderabad-based manufacturer of
               ISO-certified RCC hume pipes serving government, municipal and private
               projects across Telangana, Andhra Pradesh and Karnataka since 2009.
@@ -114,7 +117,7 @@ export default function AboutPage() {
       <section className="py-12 lg:py-24 bg-steel-50">
         <Container className="grid md:grid-cols-2 gap-6">
           <div className="rounded-2xl bg-white border border-steel-200 p-8 shadow-sm">
-            <div className="w-12 h-12 rounded-lg bg-brand-600 text-white flex items-center justify-center text-2xl mb-4">🎯</div>
+            <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center mb-4"><TargetIcon /></div>
             <h2 className="font-display text-2xl font-bold text-steel-900 mb-3">Our Mission</h2>
             <p className="text-steel-700 leading-relaxed">
               To manufacture and deliver the highest-quality RCC concrete pipes in
@@ -123,7 +126,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="rounded-2xl bg-white border border-steel-200 p-8 shadow-sm">
-            <div className="w-12 h-12 rounded-lg bg-brand-600 text-white flex items-center justify-center text-2xl mb-4">🚀</div>
+            <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center mb-4"><EyeIcon /></div>
             <h2 className="font-display text-2xl font-bold text-steel-900 mb-3">Our Vision</h2>
             <p className="text-steel-700 leading-relaxed">
               To be South India's most trusted precast concrete manufacturer — the
@@ -171,7 +174,7 @@ export default function AboutPage() {
                   <div className="font-serif text-xl font-bold text-steel-900">
                     Srinivas Reddy
                   </div>
-                  <div className="mt-0.5 text-sm uppercase tracking-widest text-brand-700 font-bold">
+                  <div className="mt-0.5 text-sm text-brand-700 font-semibold">
                     Founder &amp; Managing Director
                   </div>
                 </div>
@@ -189,6 +192,7 @@ export default function AboutPage() {
             eyebrow="Capability"
             title="Manufacturing capability"
             subtitle="A modern, scalable spun-casting facility built for volume, quality and speed."
+            light
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -217,8 +221,8 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
               <div key={v.title} className="rounded-xl border border-steel-200 p-6 hover:shadow-lg transition">
-                <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 text-white flex items-center justify-center font-bold text-lg mb-3">
-                  ✓
+                <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center mb-3">
+                  <CheckIcon />
                 </div>
                 <h3 className="font-bold text-steel-900 mb-2">{v.title}</h3>
                 <p className="text-sm text-steel-700 leading-relaxed">{v.desc}</p>

@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Container } from "./Container";
 import { site, telLink, mailLink } from "@/lib/site";
 import { cn } from "@/lib/cn";
+import { ArrowIcon, MailIcon, PhoneIcon } from "./Icons";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -17,6 +19,9 @@ const nav = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,11 +43,11 @@ export function Header() {
             </span>
           </div>
           <div className="flex items-center gap-5 tracking-wide">
-            <a href={telLink} className="hover:text-brand-400 transition">
-              ☎ {site.phoneDisplay}
+            <a href={telLink} className="inline-flex items-center gap-1.5 hover:text-brand-400 transition">
+              <PhoneIcon className="h-3.5 w-3.5" /> {site.phoneDisplay}
             </a>
-            <a href={mailLink} className="hover:text-brand-400 transition">
-              ✉ {site.email}
+            <a href={mailLink} className="inline-flex items-center gap-1.5 hover:text-brand-400 transition">
+              <MailIcon className="h-3.5 w-3.5" /> {site.email}
             </a>
             <span className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-400" />
@@ -56,7 +61,7 @@ export function Header() {
         className={cn(
           "sticky top-0 z-40 w-full transition-all border-b",
           scrolled
-            ? "bg-ivory-50/95 backdrop-blur-md shadow-md border-brand-500/20"
+            ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(9,9,11,0.06),0_8px_24px_-12px_rgba(9,9,11,0.12)] border-transparent"
             : "bg-ivory-50 border-transparent"
         )}
       >
@@ -85,17 +90,23 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 text-sm font-semibold uppercase tracking-wider text-steel-700 hover:text-brand-700 transition group"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={cn(
+                  "relative rounded-full px-4 py-2 text-[15px] font-medium transition outline-none focus-visible:ring-2 focus-visible:ring-brand-500",
+                  isActive(item.href)
+                    ? "bg-brand-50 text-brand-700 font-semibold"
+                    : "text-steel-700 hover:text-steel-900 hover:bg-steel-900/5"
+                )}
               >
                 {item.label}
-                <span className="absolute inset-x-4 bottom-0 h-px bg-brand-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </Link>
             ))}
             <Link
               href="/contact"
-              className="ml-4 rounded-none bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest shadow-gold transition"
+              className="btn-shimmer group ml-4 inline-flex items-center gap-2 rounded-full bg-steel-900 hover:bg-steel-800 text-white px-5 py-2.5 text-sm font-semibold transition"
             >
-              Request Quote →
+              Request quote
+              <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </nav>
 
@@ -122,23 +133,30 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-3 rounded-sm text-base font-semibold uppercase tracking-wider text-steel-700 hover:bg-ivory-200 hover:text-brand-700 border-b border-ivory-200"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={cn(
+                    "flex items-center justify-between px-3 py-3 rounded-lg text-base font-medium border-b border-ivory-200",
+                    isActive(item.href)
+                      ? "bg-brand-50 text-brand-700 font-semibold"
+                      : "text-steel-700 hover:bg-ivory-200 hover:text-brand-700"
+                  )}
                 >
                   {item.label}
+                  {isActive(item.href) && <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />}
                 </Link>
               ))}
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-3 rounded-none bg-brand-600 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-widest text-white shadow-gold"
+                className="btn-shimmer mt-3 rounded-lg bg-brand-600 px-4 py-3.5 text-center text-sm font-semibold text-white shadow-gold"
               >
-                Request Quote →
+                Request quote
               </Link>
               <a
                 href={telLink}
-                className="mt-2 rounded-none border border-steel-300 px-4 py-3.5 text-center text-sm font-semibold text-steel-900"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg border border-steel-300 px-4 py-3.5 text-sm font-semibold text-steel-900"
               >
-                ☎ Call {site.phoneDisplay}
+                <PhoneIcon /> Call {site.phoneDisplay}
               </a>
             </Container>
           </div>

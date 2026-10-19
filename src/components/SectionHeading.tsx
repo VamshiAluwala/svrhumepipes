@@ -24,14 +24,14 @@ export function SectionHeading({
       {eyebrow && (
         <div
           className={cn(
-            "inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest mb-4",
-            light ? "text-brand-400" : "text-brand-700",
-            center && "justify-center w-full"
+            "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold mb-4 ring-1",
+            light
+              ? "bg-white/5 text-brand-300 ring-white/10"
+              : "bg-brand-50 text-brand-700 ring-brand-600/15"
           )}
         >
-          <span className={cn("h-px w-8", light ? "bg-brand-400" : "bg-brand-600")} />
+          <span className={cn("h-1.5 w-1.5 rounded-full", light ? "bg-brand-400" : "bg-brand-500")} />
           {eyebrow}
-          <span className={cn("h-px w-8", light ? "bg-brand-400" : "bg-brand-600")} />
         </div>
       )}
       <As

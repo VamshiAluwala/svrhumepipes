@@ -8,6 +8,8 @@ import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { products } from "@/data/products";
+import { SpunPipe } from "@/components/SpunPipe";
+import { CheckIcon } from "@/components/Icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "RCC Hume Pipes - Sizes, Classes & Specifications",
@@ -32,12 +34,13 @@ export default function ProductsPage() {
     <>
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
-      <section className="bg-gradient-to-br from-brand-800 to-steel-900 text-white py-14 lg:py-20">
-        <Container className="text-center">
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white py-14 lg:py-20">
+        <SpunPipe className="-right-24 -top-20 h-[320px] w-[320px] opacity-30 lg:-right-16 lg:-top-32 lg:h-[560px] lg:w-[560px]" />
+        <Container className="relative text-center">
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4">
             RCC Hume Pipes
           </h1>
-          <p className="max-w-2xl mx-auto text-brand-100 text-lg">
+          <p className="max-w-2xl mx-auto text-ivory-200/80 text-lg">
             ISO-certified RCC hume pipes in NP2, NP3 and NP4 classes, 150 mm to 2200 mm
             diameter — all manufactured to IS 458:2003 at our Hyderabad plant.
           </p>
@@ -72,7 +75,7 @@ export default function ProductsPage() {
                   <ul className="space-y-2 mb-6">
                     {p.features.slice(0, 5).map((f) => (
                       <li key={f} className="flex gap-2 text-sm text-steel-700">
-                        <span className="text-brand-600 font-bold">✓</span>
+                        <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                         <span>{f}</span>
                       </li>
                     ))}

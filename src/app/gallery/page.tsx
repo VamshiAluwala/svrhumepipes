@@ -8,6 +8,7 @@ import { ZoomableFigure } from "@/components/ZoomableFigure";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
+import { SpunPipe } from "@/components/SpunPipe";
 
 export const metadata: Metadata = buildMetadata({
   title: "Gallery - Factory, Products & Projects",
@@ -49,14 +50,15 @@ export default function GalleryPage() {
     <>
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
-      <section className="bg-gradient-to-br from-brand-800 to-steel-900 text-white py-10 lg:py-12">
-        <Container className="text-center">
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white py-10 lg:py-12">
+        <SpunPipe className="-right-24 -top-20 h-[320px] w-[320px] opacity-30 lg:-right-16 lg:-top-32 lg:h-[560px] lg:w-[560px]" />
+        <Container className="relative text-center">
           <h1 className="font-display text-3xl lg:text-4xl font-bold">Gallery</h1>
         </Container>
       </section>
 
       {Object.entries(galleryData).map(([cat, items], idx) => (
-        <section key={cat} className={`py-16 ${idx % 2 === 0 ? "bg-white" : "bg-steel-50"}`}>
+        <section key={cat} className={`py-10 lg:py-16 ${idx % 2 === 0 ? "bg-white" : "bg-steel-50"}`}>
           <Container>
             <SectionHeading eyebrow={cat} title={`Our ${cat}`} />
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -89,7 +91,7 @@ export default function GalleryPage() {
                     <HeroImage
                       alt={g.title}
                       variant={g.variant}
-                      className="aspect-[4/3] rounded-none"
+                      className="aspect-[4/3] rounded-xl"
                     />
                   )}
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-900/90 via-steel-900/40 to-transparent p-4 text-white">

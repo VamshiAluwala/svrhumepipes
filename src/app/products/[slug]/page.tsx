@@ -15,6 +15,8 @@ import {
 } from "@/lib/schema";
 import { products, getProduct } from "@/data/products";
 import { telLink, whatsappLink } from "@/lib/site";
+import { SpunPipe } from "@/components/SpunPipe";
+import { ArrowIcon, CheckIcon, FactoryIcon, PhoneIcon, TruckIcon, WhatsAppIcon, ZapIcon } from "@/components/Icons";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -71,31 +73,33 @@ export default function ProductPage({ params }: Params) {
       />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-steel-900 via-brand-800 to-brand-700 text-white">
-        <Container className="py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white">
+        <SpunPipe className="-right-24 -top-20 h-[320px] w-[320px] opacity-30 lg:-right-16 lg:-top-32 lg:h-[560px] lg:w-[560px]" />
+        <Container className="relative py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3 py-1 text-xs font-semibold mb-4 backdrop-blur">
-              🏭 {p.standard} · ISO Certified
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1 text-xs font-medium text-ivory-200/90 mb-4 backdrop-blur">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse" />
+              {p.standard} · ISO Certified
             </div>
             <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">
               {p.name}
             </h1>
-            <p className="mt-3 text-xl text-brand-100">{p.tagline}</p>
-            <p className="mt-4 text-brand-100 leading-relaxed">{p.description}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#inquiry" className="rounded-md bg-white text-brand-800 px-6 py-3 font-semibold shadow-lg hover:bg-brand-50">
-                📋 Get Quotation
+            <p className="mt-3 text-xl text-ivory-200/80">{p.tagline}</p>
+            <p className="mt-4 text-ivory-200/80 leading-relaxed">{p.description}</p>
+            <div className="mt-7 grid grid-cols-2 sm:flex sm:flex-wrap gap-3">
+              <a href="#inquiry" className="btn-shimmer group col-span-2 sm:col-span-1 inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-6 py-3.5 font-semibold shadow-gold transition">
+                Get quotation <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a href={telLink} className="rounded-md bg-brand-600 hover:bg-brand-500 border border-brand-400 text-white px-6 py-3 font-semibold">
-                📞 Call Now
+              <a href={telLink} className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-white px-6 py-3.5 font-semibold backdrop-blur transition">
+                <PhoneIcon /> Call now
               </a>
               <a
                 href={whatsappLink(`Hi, I want to enquire about ${p.name}. Please share pricing.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-[#25D366] hover:bg-[#1EBE5D] text-white px-6 py-3 font-semibold"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-white px-6 py-3.5 font-semibold backdrop-blur transition"
               >
-                💬 WhatsApp
+                <WhatsAppIcon className="h-5 w-5 text-[#25D366]" /> WhatsApp
               </a>
             </div>
           </div>
@@ -112,7 +116,7 @@ export default function ProductPage({ params }: Params) {
         <Container>
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             <div>
-              <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-3 py-1 mb-3">
+              <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-3">
                 Features
               </div>
               <h2 className="font-display text-3xl font-bold text-steel-900 mb-3">
@@ -126,7 +130,7 @@ export default function ProductPage({ params }: Params) {
             <div className="lg:col-span-2 grid gap-4 sm:grid-cols-2">
               {p.features.map((f) => (
                 <div key={f} className="flex gap-3 rounded-lg border border-steel-200 bg-steel-50 p-4">
-                  <div className="w-8 h-8 shrink-0 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                  <div className="w-8 h-8 shrink-0 rounded-full bg-brand-50 text-brand-700 flex items-center justify-center"><CheckIcon className="h-4 w-4" /></div>
                   <div className="text-sm text-steel-700">{f}</div>
                 </div>
               ))}
@@ -177,7 +181,7 @@ export default function ProductPage({ params }: Params) {
                           rel="noopener noreferrer"
                           className="text-brand-700 font-semibold hover:underline"
                         >
-                          Get Price →
+                          Get price
                         </a>
                       </td>
                     </tr>
@@ -196,7 +200,7 @@ export default function ProductPage({ params }: Params) {
       <section className="py-16 bg-white">
         <Container className="grid lg:grid-cols-2 gap-10">
           <div>
-            <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-3 py-1 mb-3">
+            <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-3">
               Materials Used
             </div>
             <h2 className="font-display text-3xl font-bold text-steel-900 mb-4">
@@ -216,7 +220,7 @@ export default function ProductPage({ params }: Params) {
             </ul>
           </div>
           <div>
-            <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-3 py-1 mb-3">
+            <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-3">
               Manufacturing Process
             </div>
             <h2 className="font-display text-3xl font-bold text-steel-900 mb-4">
@@ -241,7 +245,7 @@ export default function ProductPage({ params }: Params) {
         <div className="absolute inset-0 bg-hero-grid bg-[size:32px_32px] opacity-20" />
         <Container className="relative">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-block rounded-full bg-white/10 text-brand-200 text-xs font-bold uppercase tracking-wider px-3 py-1 mb-3">
+            <div className="inline-block rounded-full bg-white/10 text-brand-200 text-xs font-semibold px-3 py-1 mb-3">
               Quality Standards
             </div>
             <h2 className="font-display text-3xl lg:text-4xl font-bold">
@@ -251,8 +255,8 @@ export default function ProductPage({ params }: Params) {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {p.qualityStandards.map((q) => (
               <div key={q} className="rounded-xl bg-white/5 border border-white/10 backdrop-blur p-5">
-                <div className="w-10 h-10 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold mb-3">
-                  ✓
+                <div className="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-300 flex items-center justify-center mb-3">
+                  <CheckIcon />
                 </div>
                 <p className="text-sm text-steel-200 leading-relaxed">{q}</p>
               </div>
@@ -275,7 +279,7 @@ export default function ProductPage({ params }: Params) {
                 key={a.title}
                 className="group rounded-xl border border-steel-200 hover:border-brand-300 bg-white p-6 hover:shadow-lg transition"
               >
-                <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-600 to-brand-800 text-white flex items-center justify-center font-bold text-lg mb-3">
+                <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center font-semibold tabular-nums mb-3">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 className="font-bold text-steel-900 text-lg mb-2 group-hover:text-brand-700">
@@ -316,7 +320,7 @@ export default function ProductPage({ params }: Params) {
         <Container>
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <div>
-              <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider px-3 py-1 mb-3">
+              <div className="inline-block rounded-full bg-brand-50 text-brand-700 text-xs font-semibold px-3 py-1 mb-3">
                 Product Inquiry
               </div>
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-steel-900 mb-4">
@@ -329,12 +333,12 @@ export default function ProductPage({ params }: Params) {
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: "⚡", label: "Fast reply", value: "Quotation within 24 working hrs" },
-                  { icon: "🏭", label: "Direct from factory", value: "No middleman - best price" },
-                  { icon: "🚚", label: "Pan South India delivery", value: "Own trailer fleet with hydra unloading" },
+                  { icon: <ZapIcon />, label: "Fast reply", value: "Quotation within 24 working hrs" },
+                  { icon: <FactoryIcon />, label: "Direct from factory", value: "No middleman - best price" },
+                  { icon: <TruckIcon />, label: "Pan South India delivery", value: "Own trailer fleet with hydra unloading" },
                 ].map((x) => (
                   <div key={x.label} className="flex gap-3 items-start p-4 rounded-lg bg-brand-50">
-                    <div className="text-2xl">{x.icon}</div>
+                    <div className="text-brand-700">{x.icon}</div>
                     <div>
                       <div className="font-semibold text-steel-900">{x.label}</div>
                       <div className="text-sm text-steel-700">{x.value}</div>
@@ -365,7 +369,7 @@ export default function ProductPage({ params }: Params) {
                 <HeroImage
                   alt={r.name}
                   variant={(["concrete", "drainage", "custom"] as const)[i % 3]}
-                  className="aspect-[4/3] rounded-none"
+                  className="aspect-[4/3] rounded-xl"
                 />
                 <div className="p-5">
                   <div className="text-xs font-bold uppercase tracking-wider text-brand-600">

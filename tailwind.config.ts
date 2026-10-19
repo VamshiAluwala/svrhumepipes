@@ -51,7 +51,7 @@ const config: Config = {
       },
       letterSpacing: {
         tightest: "-0.03em",
-        widest: "0.25em",
+        widest: "0.12em",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",

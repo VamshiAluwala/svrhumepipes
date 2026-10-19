@@ -1,3 +1,4 @@
+import { ArrowIcon } from "./Icons";
 // ⚠️ Replace `rating` and `reviews` with your real numbers from each platform.
 const platforms = [
   {
@@ -56,7 +57,7 @@ export function ReviewStats() {
           className="group bg-white border border-ivory-300 hover:border-brand-500 hover:shadow-classic transition p-7 flex flex-col items-center text-center"
         >
           <span
-            className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white"
+            className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full text-white"
             style={{ backgroundColor: p.accent }}
           >
             {p.tag}
@@ -74,7 +75,7 @@ export function ReviewStats() {
             <Stars rating={p.rating} />
           </div>
           <span className="mt-5 inline-flex items-center gap-1.5 text-brand-700 group-hover:text-brand-800 font-bold uppercase text-[11px] tracking-widest border-b-2 border-brand-500 pb-1 transition">
-            Read reviews →
+            Read reviews <ArrowIcon className="h-4 w-4" />
           </span>
         </a>
       ))}

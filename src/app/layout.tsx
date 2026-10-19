@@ -29,6 +29,7 @@ const satoshi = localFont({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   themeColor: "#0284c7",
 };
 
@@ -82,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content={`${site.address.latitude}, ${site.address.longitude}`}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-ivory-100 text-steel-800">
+      <body className="min-h-screen flex flex-col antialiased bg-ivory-100 text-steel-800 pb-[calc(4.25rem+env(safe-area-inset-bottom))] lg:pb-0">
         <JsonLd
           data={[organizationSchema(), localBusinessSchema(), websiteSchema()]}
         />
@@ -96,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EDHD5FBTS');`}
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5EDHD5FBTS');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');if(a)gtag('event',a.href.indexOf('tel:')===0?'click_call':'click_whatsapp',{link_url:a.href,page_path:location.pathname});},true);`}
         </Script>
       </body>
     </html>

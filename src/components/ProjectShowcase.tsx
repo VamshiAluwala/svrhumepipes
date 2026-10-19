@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CheckIcon, MapPinIcon } from "./Icons";
 
 const projects = [
   {
@@ -49,7 +50,7 @@ export function ProjectShowcase() {
       {projects.map((p) => (
         <article
           key={p.name}
-          className="group relative bg-white border border-ivory-300 hover:border-brand-500 hover:shadow-classic transition overflow-hidden flex flex-col"
+          className="group relative rounded-2xl bg-white border border-ivory-300 hover:border-brand-300 hover:shadow-classic hover:-translate-y-0.5 transition duration-300 overflow-hidden flex flex-col"
         >
           {/* Client logo band */}
           <div className="relative h-28 bg-white border-b border-ivory-200 flex items-center justify-center px-6">
@@ -61,7 +62,7 @@ export function ProjectShowcase() {
               className="max-h-14 w-auto object-contain opacity-90 group-hover:opacity-100 transition"
             />
             {p.featured && (
-              <span className="absolute top-0 right-0 bg-brand-600 text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1">
+              <span className="absolute top-3 right-3 rounded-full bg-brand-600 text-white text-[11px] font-semibold px-2.5 py-1">
                 Major Supplier
               </span>
             )}
@@ -76,8 +77,8 @@ export function ProjectShowcase() {
               {p.title}
             </h3>
             <div className="mt-3 space-y-1 text-xs text-steel-700">
-              <div className="flex gap-2"><span className="text-brand-600">◆</span>{p.scope}</div>
-              <div className="flex gap-2"><span className="text-brand-600">◆</span>{p.location}</div>
+              <div className="flex gap-2"><CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />{p.scope}</div>
+              <div className="flex gap-2"><MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />{p.location}</div>
             </div>
           </div>
         </article>

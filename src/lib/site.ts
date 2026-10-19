@@ -86,7 +86,7 @@ export const site = {
 } as const;
 
 export const whatsappLink = (
-  msg = "Hi SVR Hume Pipes 👋, I'm interested in RCC hume pipes. Please share pricing and availability."
+  msg = "Hi SVR Hume Pipes, I'm interested in RCC hume pipes. Please share pricing and availability."
 ) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`;
 
 export const telLink = `tel:${site.phone.replace(/[^\d+]/g, "")}`;

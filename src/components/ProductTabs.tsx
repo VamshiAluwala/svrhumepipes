@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { HeroImage } from "./HeroImage";
 import { products } from "@/data/products";
+import { ArrowIcon, CheckIcon } from "./Icons";
 
 const variantMap = ["pipes", "concrete", "drainage", "custom"] as const;
 
@@ -22,7 +23,7 @@ export function ProductTabs() {
             key={prod.slug}
             onClick={() => setActive(i)}
             className={
-              "text-left shrink-0 lg:w-full rounded-none border-l-4 px-5 py-4 transition " +
+              "text-left shrink-0 lg:w-full rounded-xl border-l-4 px-5 py-4 transition " +
               (i === active
                 ? "border-brand-600 bg-white shadow-md"
                 : "border-transparent bg-ivory-100 hover:bg-white hover:border-brand-300")
@@ -63,7 +64,7 @@ export function ProductTabs() {
           <ul className="mt-5 space-y-2">
             {p.features.slice(0, 4).map((f) => (
               <li key={f} className="flex gap-2.5 text-sm text-steel-700">
-                <span className="text-brand-600 font-bold">◆</span>
+                <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
                 <span>{f}</span>
               </li>
             ))}
@@ -71,13 +72,13 @@ export function ProductTabs() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href={`/products/${p.slug}`}
-              className="rounded-none bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition"
+              className="btn-shimmer group inline-flex items-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 text-sm font-semibold transition"
             >
-              View Details →
+              View details <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               href="/contact"
-              className="rounded-none border border-steel-300 hover:border-brand-600 hover:text-brand-700 text-steel-800 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition"
+              className="inline-flex items-center gap-2 rounded-lg border border-steel-300 hover:border-brand-600 hover:text-brand-700 text-steel-800 px-5 py-2.5 text-sm font-semibold transition"
             >
               Get Quote
             </Link>

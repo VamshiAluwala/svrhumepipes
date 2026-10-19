@@ -5,6 +5,8 @@ import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ContactForm } from "@/components/ContactForm";
+import { SpunPipe } from "@/components/SpunPipe";
+import { ArrowIcon, PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 import { SizeEstimator } from "@/components/SizeEstimator";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
@@ -74,47 +76,54 @@ export default function LocationPage({ params }: Params) {
       />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-steel-900 via-brand-800 to-brand-700 text-white pt-5 pb-8 lg:pt-6 lg:pb-10">
-        <Container>
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white pt-6 pb-10 lg:pt-10 lg:pb-16">
+        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:right-auto lg:top-auto lg:-left-64 lg:-bottom-80 lg:h-[720px] lg:w-[720px] lg:opacity-30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(2,132,199,0.18),transparent)] pointer-events-none" />
+        <Container className="relative">
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-12 items-center">
             {/* Left: copy + CTAs */}
             <div className="max-w-2xl lg:pt-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-widest mb-5">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1 text-xs font-medium text-ivory-200/90 mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse" />
                 ISO 9001 · IS 458:2003 · {loc.district}
               </div>
               <h1 className="font-serif text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tightest">
-                Hume Pipes in {loc.city}
+                <span className="blur-in">Hume Pipes in </span>
+                <span className="blur-in bg-gradient-to-r from-brand-300 via-brand-400 to-brand-600 bg-clip-text text-transparent" style={{ animationDelay: "150ms" }}>
+                  {loc.city}
+                </span>
               </h1>
-              <p className="mt-5 text-lg text-brand-100 leading-relaxed">{loc.intro}</p>
+              <p className="mt-5 text-base lg:text-lg text-ivory-200/80 leading-relaxed">{loc.intro}</p>
               <div className="mt-8 flex flex-col gap-3">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/contact"
-                    className="sm:flex-1 rounded-none bg-white text-brand-800 px-8 py-4 font-semibold uppercase tracking-widest text-xs text-center shadow-lg hover:bg-brand-50 transition whitespace-nowrap"
+                    className="btn-shimmer group sm:flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white px-7 py-3.5 font-semibold text-sm shadow-gold transition whitespace-nowrap"
                   >
-                    Get {loc.city} Quotation →
+                    Get {loc.city} quotation
+                    <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                   <a
                     href={whatsappLink(`Hi SVR, I need RCC hume pipes delivered to ${loc.city}. Please share pricing.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="sm:flex-1 rounded-none bg-[#25D366] hover:bg-[#1EBE5D] text-white px-8 py-4 font-semibold uppercase tracking-widest text-xs text-center transition whitespace-nowrap"
+                    className="sm:flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 hover:bg-white/15 ring-1 ring-white/15 text-white px-7 py-3.5 font-semibold text-sm backdrop-blur transition whitespace-nowrap"
                   >
-                    💬 WhatsApp
+                    <WhatsAppIcon className="h-5 w-5 text-[#25D366]" /> WhatsApp
                   </a>
                 </div>
                 <a
                   href={telLink}
-                  className="w-full rounded-none border-2 border-white/30 hover:border-white text-white px-8 py-4 font-semibold uppercase tracking-widest text-xs text-center transition whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 py-2 text-sm font-medium text-ivory-200/80 hover:text-white transition whitespace-nowrap"
                 >
-                  ☎ {site.phoneDisplay}
+                  <PhoneIcon /> Call {site.phoneDisplay} · open 24 hours
                 </a>
               </div>
             </div>
 
             {/* Right: instant estimator */}
             <div className="relative w-full">
-              <div className="absolute -inset-6 bg-gradient-to-br from-brand-500/25 via-transparent to-brand-600/10 rounded-lg blur-2xl pointer-events-none" />
+              <div className="absolute -inset-8 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
               <div className="relative">
                 <SizeEstimator />
               </div>
@@ -131,10 +140,10 @@ export default function LocationPage({ params }: Params) {
             title={`RCC hume pipes for ${loc.city} projects`}
             subtitle={`Typical ${loc.city} applications: ${loc.projects}.`}
           />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 lg:mt-10 grid gap-3 sm:gap-5 md:grid-cols-3">
             {whyChooseUs.slice(0, 6).map((w) => (
-              <div key={w.title} className="border border-ivory-300 bg-ivory-50 p-6">
-                <div className="text-xs font-bold uppercase tracking-widest text-brand-700">
+              <div key={w.title} className="rounded-2xl border border-ivory-300 bg-ivory-50 p-5 sm:p-6">
+                <div className="inline-flex rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700 ring-1 ring-brand-600/10">
                   {w.metric}
                 </div>
                 <h3 className="mt-2 font-serif text-lg font-bold text-steel-900">{w.title}</h3>
@@ -143,8 +152,9 @@ export default function LocationPage({ params }: Params) {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/products/rcc-hume-pipes" className="btn-gold">
-              View pipe sizes & specifications →
+            <Link href="/products/rcc-hume-pipes" className="btn-gold group">
+              View pipe sizes &amp; specifications
+              <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
         </Container>
@@ -168,7 +178,7 @@ export default function LocationPage({ params }: Params) {
       {/* CONTACT */}
       <section className="py-12 lg:py-20 bg-white" id="inquiry">
         <Container className="max-w-3xl">
-          <div className="rounded-none border border-ivory-300 shadow-classic p-6 lg:p-8">
+          <div className="rounded-2xl border border-ivory-300 bg-white shadow-classic p-5 sm:p-6 lg:p-8">
             <ContactForm productContext={`Hume Pipes — ${loc.city}`} />
           </div>
         </Container>

@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { whatsappLink } from "@/lib/site";
+import { CheckIcon, WhatsAppIcon } from "./Icons";
 
 type Props = {
   compact?: boolean;
@@ -40,9 +41,9 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
 
   if (status === "success") {
     return (
-      <div className="rounded-none border border-brand-200 bg-brand-50 p-10 text-center">
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-600 text-white text-3xl shadow-gold">
-          ✓
+      <div className="rounded-2xl border border-brand-200 bg-brand-50 p-8 sm:p-10 text-center">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-600 text-white shadow-gold">
+          <CheckIcon className="h-8 w-8" />
         </div>
         <h3 className="font-serif text-2xl font-bold text-steel-900 mb-2">Thank you!</h3>
         <p className="text-steel-700 max-w-md mx-auto">
@@ -53,9 +54,9 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
           href={whatsappLink("Hi, I just submitted an enquiry on your website.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-none bg-[#25D366] hover:bg-[#1EBE5D] px-6 py-3 text-white font-semibold uppercase tracking-widest text-xs shadow-lg transition"
+          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#25D366] hover:bg-[#1EBE5D] px-6 py-3 text-white font-semibold shadow-lg transition"
         >
-          💬 Continue on WhatsApp
+          <WhatsAppIcon className="h-5 w-5" /> Continue on WhatsApp
         </a>
       </div>
     );
@@ -86,7 +87,7 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
       </div>
 
       <div>
-        <label className="block text-xs font-bold uppercase tracking-widest text-steel-700 mb-2">
+        <label className="block text-sm font-medium text-steel-700 mb-1.5">
           Requirement / Message *
         </label>
         <textarea
@@ -94,14 +95,14 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
           required
           rows={4}
           placeholder="E.g. Need 100 nos of 900 mm NP3 hume pipes at Kompally site, delivery in 15 days."
-          className="w-full rounded-none border border-ivory-300 bg-ivory-50 px-4 py-3 text-sm text-steel-900 placeholder-steel-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-200 focus:outline-none transition"
+          className="w-full rounded-lg border border-ivory-300 bg-ivory-50 px-4 py-3 text-base sm:text-sm text-steel-900 placeholder-steel-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-200 focus:outline-none transition"
         />
       </div>
 
       {productContext && <input type="hidden" name="product" value={productContext} />}
 
       {error && (
-        <div className="rounded-none bg-red-50 border-l-4 border-red-500 text-red-800 text-sm p-3">
+        <div className="rounded-lg bg-red-50 border-l-4 border-red-500 text-red-800 text-sm p-3">
           {error}
         </div>
       )}
@@ -109,9 +110,9 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full rounded-none bg-brand-600 hover:bg-brand-700 disabled:bg-steel-400 text-white font-bold uppercase tracking-widest text-sm py-4 shadow-gold transition"
+        className="btn-shimmer w-full rounded-lg bg-brand-600 hover:bg-brand-500 disabled:bg-steel-400 text-white font-semibold py-4 shadow-gold transition"
       >
-        {status === "loading" ? "Sending…" : "Send Enquiry →"}
+        {status === "loading" ? "Sending…" : "Send enquiry"}
       </button>
 
       <p className="text-xs text-steel-500 text-center tracking-wide">
@@ -127,12 +128,12 @@ function Field({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
   return (
     <div>
-      <label className="block text-xs font-bold uppercase tracking-widest text-steel-700 mb-2">
+      <label className="block text-sm font-medium text-steel-700 mb-1.5">
         {label}
       </label>
       <input
         {...props}
-        className="w-full rounded-none border border-ivory-300 bg-ivory-50 px-4 py-3 text-sm text-steel-900 placeholder-steel-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-200 focus:outline-none transition"
+        className="w-full rounded-lg border border-ivory-300 bg-ivory-50 px-4 py-3 text-base sm:text-sm text-steel-900 placeholder-steel-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-200 focus:outline-none transition"
       />
     </div>
   );

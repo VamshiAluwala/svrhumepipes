@@ -5,6 +5,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site, telLink, mailLink, whatsappLink } from "@/lib/site";
+import { SpunPipe } from "@/components/SpunPipe";
+import { MailIcon, MapPinIcon, PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact Us - RCC Hume Pipes Enquiry",
@@ -24,12 +26,13 @@ export default function ContactPage() {
     <>
       <JsonLd data={breadcrumbSchema(crumbs)} />
 
-      <section className="bg-gradient-to-br from-steel-900 via-brand-800 to-brand-700 text-white py-14 lg:py-20">
-        <Container className="text-center">
+      <section className="relative isolate overflow-hidden bg-steel-950 text-white py-14 lg:py-20">
+        <SpunPipe className="-right-24 -top-20 h-[320px] w-[320px] opacity-30 lg:-right-16 lg:-top-32 lg:h-[560px] lg:w-[560px]" />
+        <Container className="relative text-center">
           <h1 className="font-display text-4xl lg:text-5xl font-bold mb-4">
             Get in Touch
           </h1>
-          <p className="max-w-2xl mx-auto text-brand-100 text-lg">
+          <p className="max-w-2xl mx-auto text-ivory-200/80 text-lg">
             Send us your requirement and we'll respond with a factory-direct quotation
             within 24 working hours. Or WhatsApp us for an instant reply.
           </p>
@@ -39,47 +42,53 @@ export default function ContactPage() {
       {/* CONTACT CARDS */}
       <section className="py-12 bg-white border-b border-steel-100">
         <Container>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-3 md:gap-5 md:grid-cols-3">
             <a
               href={telLink}
-              className="group rounded-xl border border-steel-200 hover:border-brand-500 hover:shadow-lg bg-white p-6 transition"
+              className="group flex items-center gap-4 md:block rounded-2xl border border-steel-200 hover:border-brand-500 hover:shadow-lg bg-white p-4 md:p-6 transition"
             >
-              <div className="w-12 h-12 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
-                📞
+              <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 md:mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                <PhoneIcon className="h-5 w-5" />
               </div>
-              <div className="text-sm text-steel-500">Call us directly</div>
-              <div className="text-lg font-bold text-steel-900 group-hover:text-brand-700">
-                {site.phoneDisplay}
+              <div className="min-w-0">
+                <div className="text-sm text-steel-500">Call us directly</div>
+                <div className="text-lg font-bold text-steel-900 group-hover:text-brand-700">
+                  {site.phoneDisplay}
+                </div>
+                <div className="text-xs text-steel-500 mt-1">Mon-Sat 9:00 AM - 7:00 PM</div>
               </div>
-              <div className="text-xs text-steel-500 mt-1">Mon-Sat 9:00 AM - 7:00 PM</div>
             </a>
             <a
               href={mailLink}
-              className="group rounded-xl border border-steel-200 hover:border-brand-500 hover:shadow-lg bg-white p-6 transition"
+              className="group flex items-center gap-4 md:block rounded-2xl border border-steel-200 hover:border-brand-500 hover:shadow-lg bg-white p-4 md:p-6 transition"
             >
-              <div className="w-12 h-12 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center text-2xl mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
-                ✉
+              <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 md:mb-3 group-hover:bg-brand-600 group-hover:text-white transition">
+                <MailIcon className="h-5 w-5" />
               </div>
-              <div className="text-sm text-steel-500">Email enquiry</div>
-              <div className="text-lg font-bold text-steel-900 group-hover:text-brand-700">
-                {site.email}
+              <div className="min-w-0">
+                <div className="text-sm text-steel-500">Email enquiry</div>
+                <div className="text-lg font-bold text-steel-900 group-hover:text-brand-700 break-all">
+                  {site.email}
+                </div>
+                <div className="text-xs text-steel-500 mt-1">We reply within a few hours</div>
               </div>
-              <div className="text-xs text-steel-500 mt-1">We reply within a few hours</div>
             </a>
             <a
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-xl border border-steel-200 hover:border-[#25D366] hover:shadow-lg bg-white p-6 transition"
+              className="group flex items-center gap-4 md:block rounded-2xl border border-steel-200 hover:border-[#25D366] hover:shadow-lg bg-white p-4 md:p-6 transition"
             >
-              <div className="w-12 h-12 rounded-lg bg-green-100 text-green-700 flex items-center justify-center text-2xl mb-3 group-hover:bg-[#25D366] group-hover:text-white transition">
-                💬
+              <div className="w-12 h-12 rounded-xl bg-green-50 text-green-700 flex items-center justify-center shrink-0 md:mb-3 group-hover:bg-[#25D366] group-hover:text-white transition">
+                <WhatsAppIcon className="h-6 w-6" />
               </div>
-              <div className="text-sm text-steel-500">Chat instantly</div>
-              <div className="text-lg font-bold text-steel-900 group-hover:text-green-700">
-                WhatsApp
+              <div className="min-w-0">
+                <div className="text-sm text-steel-500">Chat instantly</div>
+                <div className="text-lg font-bold text-steel-900 group-hover:text-green-700">
+                  WhatsApp
+                </div>
+                <div className="text-xs text-steel-500 mt-1">Fastest response - try now</div>
               </div>
-              <div className="text-xs text-steel-500 mt-1">Fastest response - try now</div>
             </a>
           </div>
         </Container>
@@ -139,9 +148,9 @@ export default function ContactPage() {
                   href={site.address.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 transition"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 transition"
                 >
-                  📍 Open in Google Maps
+                  <MapPinIcon className="h-4 w-4" /> Open in Google Maps
                 </a>
               </div>
             </div>

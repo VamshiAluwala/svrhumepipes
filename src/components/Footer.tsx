@@ -3,24 +3,22 @@ import { Container } from "./Container";
 import { site, telLink, whatsappLink } from "@/lib/site";
 import { products } from "@/data/products";
 import { locations } from "@/data/locations";
+import Image from "next/image";
+import { ClockIcon, InstagramIcon, MailIcon, MapPinIcon, PhoneIcon, WhatsAppIcon } from "./Icons";
 
 export function Footer() {
   return (
-    <footer className="bg-steel-900 text-ivory-200 relative overflow-hidden">
-      <div className="absolute inset-0 bg-noise opacity-40 pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent" />
+    <footer className="bg-steel-950 text-ivory-200 relative border-t border-white/5">
 
-      <Container className="relative py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-        <div>
+      <Container className="relative py-12 lg:py-16 grid gap-10 grid-cols-2 lg:grid-cols-4">
+        <div className="col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3 mb-5">
-            <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-gradient-to-br from-steel-800 to-steel-900 text-brand-500 font-serif font-black text-xl shadow-lg border border-brand-500/40">
-              SVR
-            </div>
+            <Image src="/images/logo.png" alt="" width={48} height={48} className="h-12 w-12 rounded-xl bg-white p-1 object-contain" />
             <div>
               <div className="font-serif font-bold text-white text-xl leading-tight">
                 Sri Venkateshwara
               </div>
-              <div className="text-[11px] text-brand-400 uppercase tracking-widest">Hume Pipes · Est. 2009</div>
+              <div className="text-xs text-ivory-200/60">Hume Pipes · Est. 2009</div>
             </div>
           </div>
           <p className="text-sm leading-relaxed text-ivory-200/80 mb-5">
@@ -36,12 +34,9 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={name}
-                className="w-10 h-10 rounded-sm border border-ivory-200/20 hover:border-brand-500 hover:bg-brand-600 flex items-center justify-center text-ivory-200 hover:text-white text-xs font-bold uppercase transition"
+                className="w-10 h-10 rounded-xl ring-1 ring-white/10 hover:bg-white/10 flex items-center justify-center text-ivory-200 hover:text-white text-xs font-bold uppercase transition"
               >
-                {name === "facebook" && "f"}
-                {name === "instagram" && "ig"}
-                {name === "linkedin" && "in"}
-                {name === "youtube" && "yt"}
+                {name === "instagram" ? <InstagramIcon /> : name.slice(0, 2)}
               </a>
             ))}
           </div>
@@ -49,7 +44,6 @@ export function Footer() {
 
         <div>
           <h3 className="text-white font-serif text-lg font-semibold mb-2">Explore</h3>
-          <div className="h-px w-10 bg-brand-500 mb-4" />
           <ul className="space-y-2.5 text-sm text-ivory-200/80">
             <li><Link href="/" className="hover:text-brand-400 transition">Home</Link></li>
             <li><Link href="/about" className="hover:text-brand-400 transition">About Us</Link></li>
@@ -61,7 +55,6 @@ export function Footer() {
 
         <div>
           <h3 className="text-white font-serif text-lg font-semibold mb-2">Our Products</h3>
-          <div className="h-px w-10 bg-brand-500 mb-4" />
           <ul className="space-y-2.5 text-sm text-ivory-200/80">
             {products.map((p) => (
               <li key={p.slug}>
@@ -73,12 +66,11 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <h3 className="text-white font-serif text-lg font-semibold mb-2">Get in Touch</h3>
-          <div className="h-px w-10 bg-brand-500 mb-4" />
           <ul className="space-y-3 text-sm text-ivory-200/80">
             <li className="flex gap-3">
-              <span className="text-brand-500 shrink-0">◆</span>
+              <MapPinIcon className="h-4 w-4 mt-0.5 shrink-0 text-brand-400" />
               <span>
                 {site.address.street},<br />
                 {site.address.locality}, {site.address.city} - {site.address.postalCode}
@@ -87,21 +79,21 @@ export function Footer() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-brand-500 shrink-0">☎</span>
+              <PhoneIcon className="h-4 w-4 mt-0.5 shrink-0 text-brand-400" />
               <a href={telLink} className="hover:text-brand-400 transition">{site.phoneDisplay}</a>
             </li>
             <li className="flex gap-3">
-              <span className="text-brand-500 shrink-0">✉</span>
+              <MailIcon className="h-4 w-4 mt-0.5 shrink-0 text-brand-400" />
               <a href={`mailto:${site.email}`} className="hover:text-brand-400 transition break-all">{site.email}</a>
             </li>
             <li className="flex gap-3">
-              <span className="text-brand-500 shrink-0">💬</span>
+              <WhatsAppIcon className="h-4 w-4 mt-0.5 shrink-0 text-brand-400" />
               <a href={whatsappLink()} className="hover:text-brand-400 transition" target="_blank" rel="noopener noreferrer">
                 WhatsApp Us
               </a>
             </li>
             <li className="flex gap-3">
-              <span className="text-brand-500 shrink-0">⏱</span>
+              <ClockIcon className="h-4 w-4 mt-0.5 shrink-0 text-brand-400" />
               <span>{site.hours.weekdays}</span>
             </li>
           </ul>
@@ -110,7 +102,7 @@ export function Footer() {
 
       <div className="relative border-t border-ivory-200/10">
         <Container className="py-5">
-          <div className="text-[11px] font-bold uppercase tracking-widest text-brand-400 mb-3">
+          <div className="text-sm font-semibold text-white mb-3">
             Areas We Serve
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-ivory-200/70">
@@ -133,7 +125,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </div>
           <div className="tracking-wider text-center md:text-right">
-            <span className="text-brand-500">◆</span> Telangana's Trusted RCC Hume Pipes Manufacturer<span className="text-brand-500">◆</span> IS 458:2003 ISO Certified
+            Telangana&apos;s trusted RCC hume pipes manufacturer · IS 458:2003 · ISO certified
           </div>
         </Container>
       </div>

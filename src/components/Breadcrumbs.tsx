@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./Container";
+import { ChevronIcon } from "./Icons";
 
 type Item = { name: string; path: string };
 
@@ -7,7 +8,7 @@ export function Breadcrumbs({ items }: { items: Item[] }) {
   return (
     <nav aria-label="Breadcrumb" className="bg-ivory-100 border-b border-ivory-300">
       <Container>
-        <ol className="flex flex-wrap items-center gap-2 py-3 text-xs uppercase tracking-widest text-steel-700">
+        <ol className="flex flex-nowrap overflow-x-auto whitespace-nowrap items-center gap-2 py-3 text-sm text-steel-600">
           {items.map((item, i) => {
             const isLast = i === items.length - 1;
             return (
@@ -21,7 +22,7 @@ export function Breadcrumbs({ items }: { items: Item[] }) {
                     {item.name}
                   </Link>
                 )}
-                {!isLast && <span className="text-brand-500">◆</span>}
+                {!isLast && <ChevronIcon className="h-3.5 w-3.5 text-steel-400" />}
               </li>
             );
           })}
