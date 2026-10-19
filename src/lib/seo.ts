@@ -9,6 +9,9 @@ type PageSEO = {
   ogImage?: string;
   noindex?: boolean;
   type?: "website" | "article" | "product";
+  /** hreflang → path, for pages with a translation (e.g. { "en-IN": "/", "te-IN": "/te" }) */
+  languages?: Record<string, string>;
+  locale?: string;
 };
 
 export function buildMetadata({
@@ -19,6 +22,8 @@ export function buildMetadata({
   ogImage = "/og/default.jpg",
   noindex = false,
   type = "website",
+  languages,
+  locale = "en_IN",
 }: PageSEO): Metadata {
   const url = `${site.url}${path}`;
   const fullTitle =
@@ -31,10 +36,9 @@ export function buildMetadata({
     metadataBase: new URL(site.url),
     alternates: {
       canonical: url,
-      languages: {
-        "en-IN": url,
-        "x-default": url,
-      },
+      languages: languages
+        ? Object.fromEntries(Object.entries(languages).map(([k, p]) => [k, `${site.url}${p}`]))
+        : { "en-IN": url, "x-default": url },
     },
     robots: noindex
       ? { index: false, follow: false }
@@ -55,7 +59,7 @@ export function buildMetadata({
       description,
       url,
       siteName: site.name,
-      locale: "en_IN",
+      locale,
       images: [
         {
           url: ogImage,

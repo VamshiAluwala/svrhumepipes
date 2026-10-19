@@ -25,13 +25,14 @@ export async function POST(req: Request) {
   // Honeypot — silently succeed for bots
   if (body.website) return NextResponse.json({ ok: true });
 
-  const { name, phone, email, message } = body;
-  if (!name || !phone || !email || !message) {
+  // Email is optional — estimator callback leads only collect a phone number.
+  const { name, phone, email = "", message } = body;
+  if (!name || !phone || !message) {
     return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
   }
 
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRe.test(email)) {
+  if (email && !emailRe.test(email)) {
     return NextResponse.json({ ok: false, error: "Invalid email" }, { status: 400 });
   }
 

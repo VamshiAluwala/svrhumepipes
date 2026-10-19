@@ -62,9 +62,10 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  verification: {
-    google: "REPLACE_WITH_GOOGLE_SITE_VERIFICATION_TOKEN",
-  },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Netlify env (Search Console → HTML tag → content value).
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
+  }),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

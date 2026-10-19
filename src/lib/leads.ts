@@ -28,7 +28,7 @@ export async function sendEmail(lead: Lead) {
       body: JSON.stringify({
         from,
         to: to.split(",").map((s) => s.trim()),
-        reply_to: lead.email,
+        ...(lead.email && { reply_to: lead.email }),
         subject: `🔔 New SVR Lead · ${lead.name} · ${lead.product}`,
         html: renderEmailHtml(lead),
         text: renderEmailText(lead),
@@ -58,7 +58,7 @@ function renderEmailHtml(l: Lead) {
       <table style="width:100%;border-collapse:collapse">
         ${row("👤 Name", l.name)}
         ${row("📞 Phone", `<a href="tel:${l.phone}" style="color:#0284c7">${l.phone}</a>`)}
-        ${row("✉ Email", `<a href="mailto:${l.email}" style="color:#0284c7">${l.email}</a>`)}
+        ${row("✉ Email", l.email ? `<a href="mailto:${l.email}" style="color:#0284c7">${l.email}</a>` : "—")}
         ${row("🏢 Company", l.company || "—")}
         ${row("🔧 Product interest", l.product)}
         ${row("📍 Source page", l.source)}
@@ -143,7 +143,7 @@ export async function sendWhatsApp(lead: Lead) {
     ``,
     `👤 ${lead.name}`,
     `📞 ${lead.phone}`,
-    `✉ ${lead.email}`,
+    `✉ ${lead.email || "-"}`,
     `🏢 ${lead.company || "-"}`,
     `🔧 ${lead.product}`,
     ``,

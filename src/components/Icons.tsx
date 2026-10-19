@@ -75,3 +75,4 @@ export const industryIcons: Record<string, (p: P) => JSX.Element> = {
   highway: TruckIcon,
   hardhat: HardHatIcon,
 };
+export const StarIcon = make(<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z" />);

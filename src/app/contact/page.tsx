@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <div className="text-lg font-bold text-steel-900 group-hover:text-brand-700">
                   {site.phoneDisplay}
                 </div>
-                <div className="text-xs text-steel-500 mt-1">Mon-Sat 9:00 AM - 7:00 PM</div>
+                <div className="text-xs text-steel-500 mt-1">{site.hours.weekdays}</div>
               </div>
             </a>
             <a

@@ -32,6 +32,7 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
       });
       if (!res.ok) throw new Error("Failed to send");
       setStatus("success");
+      window.gtag?.("event", "generate_lead", { form: "contact", page_path: location.pathname });
       form.reset();
     } catch (err) {
       setStatus("error");

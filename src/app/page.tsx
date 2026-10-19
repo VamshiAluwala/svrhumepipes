@@ -37,6 +37,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Top RCC hume pipe manufacturer in Hyderabad. ISO-certified NP2, NP3 & NP4 pipes (150–2200 mm) to IS 458:2003, with 24×7 dispatch across Telangana.",
   path: "/",
+  languages: { "en-IN": "/", "te-IN": "/te", "x-default": "/" },
   keywords: [
     "hume pipes hyderabad",
     "hume pipes in hyderabad",
@@ -528,8 +529,8 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Ratings & Reviews"
-            title="Rated by our customers"
-            subtitle="See what customers say about SVR Hume Pipes across IndiaMART, JustDial and Google."
+            title="See what our customers say"
+            subtitle="Read reviews of SVR Hume Pipes on Google, IndiaMART and JustDial — and leave one after your delivery."
           />
           <div className="mt-14">
             <Reveal><ReviewStats /></Reveal>

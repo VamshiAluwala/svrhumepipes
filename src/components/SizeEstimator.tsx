@@ -31,6 +31,8 @@ export function SizeEstimator() {
   const [distanceM, setDistanceM] = useState(500);
   const [name, setName] = useState("");
   const [site_, setSite] = useState("");
+  const [phone, setPhone] = useState("");
+  const phoneOk = phone.replace(/\D/g, "").length >= 10;
 
   const spec = useMemo(() => {
     const base = baseSizes.find((s) => s.diameterMM === diameterMM) ?? baseSizes[0];
@@ -49,13 +51,15 @@ export function SizeEstimator() {
   }, [cls, diameterMM, mode, qty, distanceM]);
 
   // Plain text only: WhatsApp Desktop/Web turn emoji in wa.me links into "?" boxes.
-  // The sender's phone number arrives with the WhatsApp message, so we don't ask for it.
+  // The phone field is optional: WhatsApp already shows the sender's number, but saving it
+  // here also captures visitors who open WhatsApp and never press send.
   const waMsg = [
     `*Hume Pipe Quotation Request*`,
     ``,
     ...(name.trim() ? [`Name: ${name.trim()}`] : []),
     ...(site_.trim() ? [`Delivery site: ${site_.trim()}`] : []),
-    ...(name.trim() || site_.trim() ? [``] : []),
+    ...(phoneOk ? [`Call back on: ${phone.trim()}`] : []),
+    ...(name.trim() || site_.trim() || phoneOk ? [``] : []),
     `Pipe class: ${cls} (IS 458:2003)`,
     `Diameter: ${spec.diameterMM} mm`,
     ...(mode === "distance"
@@ -213,11 +217,39 @@ export function SizeEstimator() {
           />
         </div>
 
+        <input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          maxLength={16}
+          placeholder="Phone — we'll call you back (optional)"
+          aria-label="Phone number for a call back (optional)"
+          className="w-full rounded-lg px-3 py-2.5 border border-steel-300 bg-white text-base sm:text-sm text-steel-900 placeholder-steel-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none"
+        />
+
         {/* CTA */}
         <a
           href={whatsappLink(waMsg)}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            if (!phoneOk) return;
+            // keepalive: the request survives the tab switching to WhatsApp
+            fetch("/api/contact", {
+              method: "POST",
+              keepalive: true,
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: name.trim() || "Website visitor",
+                phone: phone.trim(),
+                product: `${cls} ${spec.diameterMM} mm (estimator)`,
+                message: waMsg,
+              }),
+            }).catch(() => {});
+            window.gtag?.("event", "generate_lead", { form: "estimator", page_path: location.pathname });
+          }}
           className="btn-shimmer flex items-center justify-center gap-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm py-3 shadow-gold transition"
         >
           <WhatsAppIcon className="h-5 w-5" /> Get best price on WhatsApp

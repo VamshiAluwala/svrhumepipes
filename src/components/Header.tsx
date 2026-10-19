@@ -15,6 +15,7 @@ const nav = [
   { href: "/products", label: "Products" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+  { href: "/te", label: "తెలుగు" },
 ];
 
 export function Header() {

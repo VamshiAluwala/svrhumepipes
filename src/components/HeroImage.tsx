@@ -4,38 +4,14 @@ import { cn } from "@/lib/cn";
 type Variant = "pipes" | "factory" | "worker" | "concrete" | "drainage" | "custom" | "stack" | "site";
 
 const imageMap: Record<Variant, { src: string; alt: string }> = {
-  pipes: {
-    src: "/images/pipes.jpg",
-    alt: "Stack of large RCC hume concrete pipes at SVR stockyard",
-  },
-  stack: {
-    src: "https://images.unsplash.com/photo-1590756254933-2873d72a83b6?auto=format&fit=crop&w=1600&q=80",
-    alt: "Concrete hume pipes stockyard",
-  },
-  factory: {
-    src: "/images/factory.jpg",
-    alt: "SVR Hume Pipes spun-casting factory in Hyderabad",
-  },
-  worker: {
-    src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80",
-    alt: "Construction site with worker",
-  },
-  concrete: {
-    src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
-    alt: "Precast concrete elements",
-  },
-  drainage: {
-    src: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=1600&q=80",
-    alt: "Concrete drainage pipe installation",
-  },
-  custom: {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80",
-    alt: "Industrial precast concrete products",
-  },
-  site: {
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
-    alt: "Highway construction site",
-  },
+  pipes: { src: "/images/pipes.jpg", alt: "Stack of large RCC hume concrete pipes at SVR stockyard" },
+  stack: { src: "/images/Gallary6.jpeg", alt: "Finished RCC hume pipes in the SVR stockyard" },
+  factory: { src: "/images/factory.jpg", alt: "SVR Hume Pipes spun-casting factory in Hyderabad" },
+  worker: { src: "/images/Gallary8.jpeg", alt: "Crane loading RCC hume pipes at the SVR plant" },
+  concrete: { src: "/images/Gallary4.jpeg", alt: "Large-diameter RCC hume pipes made by SVR" },
+  drainage: { src: "/images/Gallary1.jpeg", alt: "SVR hume pipes dispatched to a drainage site" },
+  custom: { src: "/images/Gallary5.jpeg", alt: "NP3 RCC hume pipes at the SVR yard" },
+  site: { src: "/images/Gallary3.jpeg", alt: "Trailer loaded with SVR hume pipes for site supply" },
 };
 
 type Props = {
