@@ -35,7 +35,7 @@ const LAST_UPDATED = "2026-08-01";
 export const metadata: Metadata = buildMetadata({
   title: "Hume Pipes in Hyderabad - RCC, Spun & Cement Pipes",
   description:
-    "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
+    "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150-2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
   path: "/",
   languages: { "en-IN": "/", "te-IN": "/te", "x-default": "/" },
   keywords: [
@@ -59,7 +59,7 @@ export default function HomePage() {
             path: "/",
             name: "Hume Pipes in Hyderabad - RCC, Spun & Cement Pipes | SVR Hume Pipes",
             description:
-              "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
+              "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150-2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
             dateModified: LAST_UPDATED,
           }),
           breadcrumbSchema([{ name: "Home", path: "/" }]),
@@ -76,7 +76,7 @@ export default function HomePage() {
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative isolate overflow-hidden bg-steel-950 text-white lg:min-h-[92vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-steel-950 via-steel-950 to-brand-900/40" />
-        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:right-auto lg:top-auto lg:-left-64 lg:-bottom-80 lg:h-[720px] lg:w-[720px] lg:opacity-30" />
+        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:-right-72 lg:-top-48 lg:h-[680px] lg:w-[680px] lg:opacity-60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(2,132,199,0.18),transparent)] pointer-events-none" />
 
         <Container className="relative pt-8 pb-14 lg:pt-12 lg:pb-16 grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-12 items-start">
@@ -103,7 +103,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 lg:mt-5 text-base lg:text-lg text-ivory-200/85 leading-relaxed max-w-xl">
               <strong className="text-white">In short:</strong> SVR Hume Pipes manufactures
-              ISO-certified RCC hume pipes (NP2, NP3 &amp; NP4, 150–2200 mm, IS&nbsp;458:2003),
+              ISO-certified RCC hume pipes (NP2, NP3 &amp; NP4, 150-2200 mm, IS&nbsp;458:2003),
               delivered 24×7 across Telangana. Trusted by contractors and government
               departments for <strong className="text-white">15+ years</strong>.
             </p>
@@ -214,7 +214,7 @@ export default function HomePage() {
                   ["Product", "RCC hume pipes: NP2, NP3 & NP4 (plain, socket & spigot)"],
                   ["Sizes", "150 mm to 2200 mm diameter"],
                   ["Standard", "IS 458:2003 · ISO 9001 certified"],
-                  ["Plant", "Lalgadi Malakpet, Medchal–Malkajgiri, Hyderabad"],
+                  ["Plant", "Lalgadi Malakpet, Medchal-Malkajgiri, Hyderabad"],
                   ["Delivery", "Own trailer fleet + hydra-crane · open 24×7"],
                   ["Serves", "Telangana, Andhra Pradesh & Karnataka"],
                 ].map(([k, v]) => (
@@ -377,7 +377,7 @@ export default function HomePage() {
                   <td data-label="Best for" className="p-4 text-steel-700">
                     House connections, field &amp; cross drains, light-traffic drainage
                   </td>
-                  <td data-label="Typical sizes" className="p-4 text-steel-700">150–1200 mm</td>
+                  <td data-label="Typical sizes" className="p-4 text-steel-700">150-1200 mm</td>
                 </tr>
                 <tr className="bg-ivory-50">
                   <td className="p-4 font-bold text-steel-900">
@@ -386,11 +386,11 @@ export default function HomePage() {
                       Most common
                     </span>
                   </td>
-                  <td data-label="Load / duty" className="p-4 text-steel-700">Medium–heavy duty, non-pressure</td>
+                  <td data-label="Load / duty" className="p-4 text-steel-700">Medium-heavy duty, non-pressure</td>
                   <td data-label="Best for" className="p-4 text-steel-700">
                     Road culverts, storm-water &amp; sewer lines under regular traffic
                   </td>
-                  <td data-label="Typical sizes" className="p-4 text-steel-700">150–2200 mm</td>
+                  <td data-label="Typical sizes" className="p-4 text-steel-700">150-2200 mm</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-bold text-steel-900">NP4</td>
@@ -398,7 +398,7 @@ export default function HomePage() {
                   <td data-label="Best for" className="p-4 text-steel-700">
                     Highways, rail crossings, deep burial and high fill loads
                   </td>
-                  <td data-label="Typical sizes" className="p-4 text-steel-700">300–2200 mm</td>
+                  <td data-label="Typical sizes" className="p-4 text-steel-700">300-2200 mm</td>
                 </tr>
               </tbody>
             </table>

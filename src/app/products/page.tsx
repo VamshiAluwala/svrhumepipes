@@ -14,7 +14,7 @@ import { CheckIcon } from "@/components/Icons";
 export const metadata: Metadata = buildMetadata({
   title: "RCC Hume Pipes & Spun Pipes - Sizes, Classes, Specs",
   description:
-    "RCC hume pipes (spun concrete / cement pipes) by SVR Hyderabad. NP2, NP3 & NP4, 150–2200 mm, IS 458:2003. Sizes, wall thickness and weights; price on request.",
+    "RCC hume pipes (spun concrete / cement pipes) by SVR Hyderabad. NP2, NP3 & NP4, 150-2200 mm, IS 458:2003. Sizes, wall thickness and weights; price on request.",
   path: "/products",
   keywords: [
     "rcc hume pipes price hyderabad",

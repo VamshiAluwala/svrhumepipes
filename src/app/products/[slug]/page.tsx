@@ -29,7 +29,7 @@ export function generateMetadata({ params }: Params): Metadata {
   if (!p) return {};
   return buildMetadata({
     title: `${p.name} (Spun / Cement Pipes) - Hyderabad`,
-    description: `${p.name}: RCC spun and cement concrete pipes by SVR, Hyderabad. NP2, NP3 & NP4, 150–2200 mm, IS 458:2003. Price on request, delivery across Telangana.`,
+    description: `${p.name}: RCC spun and cement concrete pipes by SVR, Hyderabad. NP2, NP3 & NP4, 150-2200 mm, IS 458:2003. Price on request, delivery across Telangana.`,
     path: `/products/${p.slug}`,
     keywords: [
       `${p.name.toLowerCase()} hyderabad`,

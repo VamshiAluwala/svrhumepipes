@@ -118,7 +118,7 @@ export function localBusinessSchema() {
           "@type": "Product",
           name: `${cls} RCC Hume Pipes`,
           alternateName: [`${cls} RCC Pipes`, `${cls} Spun Pipes`, `${cls} Cement Pipes`],
-          description: `${cls} class spun-cast RCC hume pipes, 150–2200 mm, to IS 458:2003.`,
+          description: `${cls} class spun-cast RCC hume pipes, 150-2200 mm, to IS 458:2003.`,
         },
       })),
     },

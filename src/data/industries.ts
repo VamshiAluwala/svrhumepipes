@@ -72,7 +72,7 @@ export const whyChooseUs = [
     title: "Full Size Range",
     description:
       "150 mm to 2200 mm diameter, NP2 / NP3 / NP4 classes, custom lengths on request.",
-    metric: "150–2200 mm",
+    metric: "150-2200 mm",
   },
   {
     title: "Fast Delivery",

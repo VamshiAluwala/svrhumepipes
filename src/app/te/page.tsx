@@ -14,7 +14,7 @@ import { site, telLink, whatsappLink } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "హైదరాబాద్‌లో RCC హ్యూమ్ పైపులు - తయారీదారు",
   description:
-    "ISO సర్టిఫైడ్ NP2, NP3, NP4 RCC హ్యూమ్ పైపులు (150–2200 mm), IS 458:2003 ప్రమాణాల ప్రకారం. తెలంగాణ అంతటా 24×7 డెలివరీ. ఇప్పుడే కొటేషన్ పొందండి.",
+    "ISO సర్టిఫైడ్ NP2, NP3, NP4 RCC హ్యూమ్ పైపులు (150-2200 mm), IS 458:2003 ప్రమాణాల ప్రకారం. తెలంగాణ అంతటా 24×7 డెలివరీ. ఇప్పుడే కొటేషన్ పొందండి.",
   path: "/te",
   languages: { "en-IN": "/", "te-IN": "/te", "x-default": "/" },
   locale: "te_IN",
@@ -28,7 +28,7 @@ const facts = [
   ["ఉత్పత్తి", "RCC హ్యూమ్ పైపులు: NP2, NP3 & NP4"],
   ["సైజులు", "150 mm నుంచి 2200 mm వ్యాసం"],
   ["ప్రమాణం", "IS 458:2003 · ISO 9001 సర్టిఫైడ్"],
-  ["ఫ్యాక్టరీ", "లాల్‌గడి మలక్‌పేట్, మేడ్చల్–మల్కాజ్‌గిరి, హైదరాబాద్"],
+  ["ఫ్యాక్టరీ", "లాల్‌గడి మలక్‌పేట్, మేడ్చల్-మల్కాజ్‌గిరి, హైదరాబాద్"],
   ["డెలివరీ", "సొంత ట్రైలర్లు + హైడ్రా క్రేన్ అన్‌లోడింగ్ · 24×7"],
   ["సేవా ప్రాంతాలు", "తెలంగాణ, ఆంధ్రప్రదేశ్, కర్ణాటక"],
 ];
@@ -72,7 +72,7 @@ export default function TeluguPage() {
 
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-steel-950 text-white">
-        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:right-auto lg:top-auto lg:-left-64 lg:-bottom-80 lg:h-[720px] lg:w-[720px] lg:opacity-30" />
+        <SpunPipe className="-right-28 -top-16 h-[300px] w-[300px] opacity-40 lg:-right-72 lg:-top-48 lg:h-[680px] lg:w-[680px] lg:opacity-60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_40%,rgba(2,132,199,0.18),transparent)] pointer-events-none" />
         <Container className="relative pt-8 pb-14 lg:pt-12 lg:pb-16 grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-12 items-start">
           <div>
