@@ -12,6 +12,7 @@ import {
   websiteSchema,
 } from "@/lib/schema";
 import { site } from "@/lib/site";
+import { siteKeywords } from "@/lib/seo";
 
 // Satoshi — self-hosted (Fontshare). Same typeface used on agentorix.in.
 const satoshi = localFont({
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.legalName, url: site.url }],
   creator: site.legalName,
   publisher: site.legalName,
-  keywords: site.keywords.join(", "),
+  keywords: siteKeywords.join(", "),
   formatDetection: { email: false, address: false, telephone: false },
   icons: {
     icon: "/favicon.png",

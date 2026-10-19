@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { site } from "./site";
 
+// Background-only keywords: meta tags and structured data, never rendered in the UI.
+// SEO_KEYWORDS (comma-separated, in .env / Netlify env) adds to the built-in list in site.ts.
+export const siteKeywords = Array.from(
+  new Set([
+    ...site.keywords,
+    ...(process.env.SEO_KEYWORDS ?? "").split(",").map((k) => k.trim().toLowerCase()).filter(Boolean),
+  ])
+);
+
 type PageSEO = {
   title: string;
   description: string;
@@ -31,7 +40,7 @@ export function buildMetadata({
   return {
     title: { absolute: fullTitle },
     description,
-    keywords: [...site.keywords, ...keywords].join(", "),
+    keywords: Array.from(new Set([...siteKeywords, ...keywords])).join(", "),
     metadataBase: new URL(site.url),
     alternates: {
       canonical: url,
