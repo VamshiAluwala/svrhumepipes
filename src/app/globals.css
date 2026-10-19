@@ -72,7 +72,7 @@
 
 /* ── Motion effects (ported from 21st.dev / Magic UI patterns, CSS-only) ── */
 
-/* Shimmer button — light sweep across a solid CTA */
+/* Shimmer button, light sweep across a solid CTA */
 .btn-shimmer {
   @apply relative isolate overflow-hidden;
 }
@@ -89,7 +89,7 @@
   60%, 100% { transform: translateX(100%); }
 }
 
-/* Border beam — a light travelling around a card's edge */
+/* Border beam, a light travelling around a card's edge */
 @property --beam-angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -116,17 +116,17 @@
   to { --beam-angle: 360deg; }
 }
 
-/* Blur-in text — words resolve from a soft blur, staggered via inline delay */
+/* Blur-in text, words resolve from a soft blur, staggered via inline delay */
 .blur-in {
   display: inline-block;
   animation: blur-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes blur-in {
-  /* no opacity:0 — the hero H1 is the LCP element; hiding it delays LCP by ~1s */
+  /* no opacity:0, the hero H1 is the LCP element; hiding it delays LCP by ~1s */
   from { filter: blur(4px); transform: translateY(8px); }
 }
 
-/* Spun-cast pipe — cage turns like the mould, motion arcs faster */
+/* Spun-cast pipe, cage turns like the mould, motion arcs faster */
 .spin-slow,
 .spin-fast {
   transform-origin: 200px 200px;
@@ -147,7 +147,7 @@
   to { stroke-dashoffset: -70; }
 }
 
-/* Scroll reveal driven by the browser — no JS, content is never hidden
+/* Scroll reveal driven by the browser, no JS, content is never hidden
    where scroll timelines are unsupported (it simply shows). */
 @supports (animation-timeline: view()) {
   .reveal {
@@ -159,7 +159,7 @@
     from { opacity: 0.2; transform: translateY(32px); }
   }
 }
-/* phones/tablets: static lines — continuous SVG repaint is the main CPU drain there */
+/* phones/tablets: static lines, continuous SVG repaint is the main CPU drain there */
 @media (max-width: 1023px) {
   .bg-paths path { animation: none; }
 }
@@ -183,7 +183,7 @@
   }
 }
 
-/* Tables that become stacked cards on phones — label each <td data-label> */
+/* Tables that become stacked cards on phones, label each <td data-label> */
 @media (max-width: 639px) {
   .stack-table thead { display: none; }
   .stack-table tr { display: block; padding: 0.75rem 0; }

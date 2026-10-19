@@ -13,7 +13,7 @@ export const locations: Location[] = [
     city: "Hyderabad",
     district: "Hyderabad",
     intro:
-      "As a Hyderabad-based manufacturer, we supply ISO-certified RCC hume pipes to sites across the city — from GHMC storm-water drains and HMWSSB sewer lines to private township and commercial projects. Our plant near ECIL keeps lead times short for Hyderabad orders.",
+      "As a Hyderabad-based manufacturer, we supply ISO-certified RCC hume pipes to sites across the city, from GHMC storm-water drains and HMWSSB sewer lines to private township and commercial projects. Our plant near ECIL keeps lead times short for Hyderabad orders.",
     projects: "GHMC storm-water drains · HMWSSB sewer networks · township drainage",
   },
   {
@@ -37,7 +37,7 @@ export const locations: Location[] = [
     city: "Karimnagar",
     district: "Karimnagar",
     intro:
-      "For Karimnagar contractors and irrigation projects, we manufacture RCC hume pipes from 150 mm to 2200 mm — used on lift-irrigation, canal distribution and road-drainage works across the district.",
+      "For Karimnagar contractors and irrigation projects, we manufacture RCC hume pipes from 150 mm to 2200 mm, used on lift-irrigation, canal distribution and road-drainage works across the district.",
     projects: "lift irrigation · canal distribution · road drainage",
   },
   {
@@ -61,7 +61,7 @@ export const locations: Location[] = [
     city: "Sangareddy",
     district: "Sangareddy",
     intro:
-      "Serving the Sangareddy industrial corridor, we deliver NP2/NP3/NP4 hume pipes for SEZ, factory effluent and storm-water drainage — with volume pricing for large infrastructure orders.",
+      "Serving the Sangareddy industrial corridor, we deliver NP2/NP3/NP4 hume pipes for SEZ, factory effluent and storm-water drainage, with volume pricing for large infrastructure orders.",
     projects: "industrial storm-water · effluent lines · SEZ drainage",
   },
   {

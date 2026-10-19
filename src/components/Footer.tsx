@@ -22,8 +22,8 @@ export function Footer() {
             </div>
           </div>
           <p className="text-sm leading-relaxed text-ivory-200/80 mb-5">
-            Hyderabad's most trusted manufacturer of ISO-certified RCC hume pipes
-            — serving PWD, GHMC, HMDA, HMWSSB and India's leading infrastructure
+            Hyderabad's most trusted manufacturer of ISO-certified RCC hume pipes,
+            serving PWD, GHMC, HMDA, HMWSSB and India's leading infrastructure
             builders.
           </p>
           <div className="flex gap-2">

@@ -72,7 +72,7 @@ export const whyChooseUs = [
     title: "Full Size Range",
     description:
       "150 mm to 2200 mm diameter, NP2 / NP3 / NP4 classes, custom lengths on request.",
-    metric: "150 – 2200 mm",
+    metric: "150–2200 mm",
   },
   {
     title: "Fast Delivery",
@@ -118,6 +118,6 @@ export const homeFaqs = [
   },
   {
     q: "What is the minimum order quantity?",
-    a: "There is no strict minimum order — from a single truck load up to bulk supply for large infrastructure projects, we service orders of all sizes.",
+    a: "There is no strict minimum order. We supply anything from a single truck load to bulk orders for large infrastructure projects.",
   },
 ];

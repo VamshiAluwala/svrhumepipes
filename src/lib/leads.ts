@@ -10,7 +10,7 @@ export type Lead = {
 };
 
 // ─────────────────────────────────────────────────────────────
-// 1. EMAIL — via Resend (https://resend.com — 3,000/mo free)
+// 1. EMAIL, via Resend (https://resend.com, 3,000/mo free)
 // ─────────────────────────────────────────────────────────────
 export async function sendEmail(lead: Lead) {
   const apiKey = process.env.RESEND_API_KEY;
@@ -58,8 +58,8 @@ function renderEmailHtml(l: Lead) {
       <table style="width:100%;border-collapse:collapse">
         ${row("👤 Name", l.name)}
         ${row("📞 Phone", `<a href="tel:${l.phone}" style="color:#0284c7">${l.phone}</a>`)}
-        ${row("✉ Email", l.email ? `<a href="mailto:${l.email}" style="color:#0284c7">${l.email}</a>` : "—")}
-        ${row("🏢 Company", l.company || "—")}
+        ${row("✉ Email", l.email ? `<a href="mailto:${l.email}" style="color:#0284c7">${l.email}</a>` : "-")}
+        ${row("🏢 Company", l.company || "-")}
         ${row("🔧 Product interest", l.product)}
         ${row("📍 Source page", l.source)}
       </table>
@@ -107,7 +107,7 @@ function escape(s: string) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 2. GOOGLE SHEET — via Apps Script webhook
+// 2. GOOGLE SHEET, via Apps Script webhook
 // ─────────────────────────────────────────────────────────────
 export async function sendToSheet(lead: Lead) {
   const url = process.env.GOOGLE_SHEET_WEBHOOK_URL;
@@ -131,7 +131,7 @@ export async function sendToSheet(lead: Lead) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// 3. WHATSAPP — via CallMeBot (free personal WhatsApp)
+// 3. WHATSAPP, via CallMeBot (free personal WhatsApp)
 // ─────────────────────────────────────────────────────────────
 export async function sendWhatsApp(lead: Lead) {
   const phone = process.env.CALLMEBOT_PHONE;
@@ -149,7 +149,7 @@ export async function sendWhatsApp(lead: Lead) {
     ``,
     `💬 ${lead.message}`,
     ``,
-    `— svrhumepipes.com`,
+    `svrhumepipes.com`,
   ].join("\n");
 
   try {

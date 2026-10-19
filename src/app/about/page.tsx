@@ -98,10 +98,10 @@ export default function AboutPage() {
                 QC lab and dedicated curing tanks.
               </p>
               <p>
-                Every pipe we manufacture is designed to outperform site-cast concrete
-                — with superior strength, dimensional accuracy, corrosion resistance
+                Every pipe we manufacture is designed to outperform site-cast concrete,
+                with superior strength, dimensional accuracy, corrosion resistance
                 and long service life. From <strong>150 mm</strong> to{" "}
-                <strong>2200 mm</strong> diameter, in NP2, NP3 and NP4 classes — we
+                <strong>2200 mm</strong> diameter, in NP2, NP3 and NP4 classes. We
                 make it, and we test it.
               </p>
               <p>
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold text-steel-900 mb-3">Our Mission</h2>
             <p className="text-steel-700 leading-relaxed">
               To manufacture and deliver the highest-quality RCC concrete pipes in
-              India — engineered for decades of service under the toughest field
+              India, engineered for decades of service under the toughest field
               conditions, priced fairly, and delivered on time.
             </p>
           </div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center mb-4"><EyeIcon /></div>
             <h2 className="font-display text-2xl font-bold text-steel-900 mb-3">Our Vision</h2>
             <p className="text-steel-700 leading-relaxed">
-              To be South India's most trusted precast concrete manufacturer — the
+              To be South India's most trusted precast concrete manufacturer, the
               default choice for every government body, municipal corporation and
               infrastructure contractor building the India of tomorrow.
             </p>
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <div>
                 <div className="font-serif text-6xl leading-none text-brand-200">&ldquo;</div>
                 <blockquote className="-mt-5 text-lg lg:text-xl text-steel-800 leading-relaxed italic">
-                  Since 2009, our promise has been simple —{" "}
+                  Since 2009, our promise has been simple:{" "}
                   <strong className="not-italic font-semibold text-steel-900">
                     number-one quality at the best price, delivered on time, every
                     time.

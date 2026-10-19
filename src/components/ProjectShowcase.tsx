@@ -6,7 +6,7 @@ const projects = [
     name: "Sushee Infra",
     logo: "/images/clients/sushee.png",
     title: "General Civil & Irrigation Works",
-    scope: "Major RCC hume pipe supplier — irrigation & general civil construction",
+    scope: "Major RCC hume pipe supplier for irrigation & general civil construction",
     location: "Telangana",
     year: "2024",
     category: "Irrigation & Civil",

@@ -29,7 +29,7 @@ export function SpunPipe({ className }: { className?: string }) {
         <circle cx="200" cy="200" r="196" fill="url(#sp-grain)" />
         <circle cx="200" cy="200" r="196" fill="none" stroke="#a1a1aa" strokeOpacity="0.35" strokeWidth="1.5" />
 
-        {/* steel cage — spins like the mould */}
+        {/* steel cage, spins like the mould */}
         <g className="spin-slow">
           <circle cx="200" cy="200" r="170" fill="none" stroke="#38bdf8" strokeOpacity="0.45" strokeWidth="1.2" strokeDasharray="2 5" />
           {bars.map((a, i) => (
@@ -53,7 +53,7 @@ export function SpunPipe({ className }: { className?: string }) {
   );
 }
 
-// A jointed pipeline with water running through it — drainage, literally.
+// A jointed pipeline with water running through it, drainage, literally.
 export function PipelineFlow({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className={cn("pointer-events-none w-full", className)} aria-hidden="true">

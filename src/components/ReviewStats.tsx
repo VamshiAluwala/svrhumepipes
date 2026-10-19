@@ -1,6 +1,6 @@
 import { ArrowIcon, StarIcon } from "./Icons";
 
-// Add `rating` and `reviews` only with the real numbers shown on each platform —
+// Add `rating` and `reviews` only with the real numbers shown on each platform -
 // a card without them simply links out. Never ship estimated ratings (Google Ads policy).
 const platforms: {
   name: string;

@@ -7,7 +7,7 @@ const msg =
 export function WhatsAppButton() {
   return (
     <>
-      {/* Mobile: sticky Call + WhatsApp bar — ad traffic lands here, keep both actions one tap away */}
+      {/* Mobile: sticky Call + WhatsApp bar, ad traffic lands here, keep both actions one tap away */}
       <div className="lg:hidden fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-steel-900/10 bg-white/90 px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] backdrop-blur-xl">
         <a
           href={telLink}

@@ -138,7 +138,7 @@ export const products: Product[] = [
       },
       {
         q: "What is the difference between NP2, NP3 and NP4 hume pipes?",
-        a: "NP2 is a non-pressure pipe for light-duty drainage. NP3 is a medium-duty class for storm water and shallow sewers under normal traffic and moderate vehicular loads. NP4 is the heavy-duty class with thicker walls and stronger reinforcement — used for deep burial, heavy traffic loads and large-diameter sewer and irrigation mains.",
+        a: "NP2 is a non-pressure pipe for light-duty drainage. NP3 is a medium-duty class for storm water and shallow sewers under normal traffic and moderate vehicular loads. NP4 is the heavy-duty class with thicker walls and stronger reinforcement, used for deep burial, heavy traffic loads and large-diameter sewer and irrigation mains.",
       },
       {
         q: "What sizes of RCC hume pipes do you manufacture?",

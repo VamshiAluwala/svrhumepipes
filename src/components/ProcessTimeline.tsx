@@ -2,7 +2,7 @@ const steps = [
   { n: "01", title: "Raw Material Inspection", desc: "OPC 53 cement, TMT Fe500, graded aggregates weigh-batched." },
   { n: "02", title: "Cage Fabrication", desc: "Reinforcement cage spot-welded to design drawings." },
   { n: "03", title: "Spun-Casting", desc: "Centrifugal spinning at controlled RPM for perfect compaction." },
-  { n: "04", title: "28-Day Water Curing", desc: "Full immersion curing tanks — no shortcuts on strength." },
+  { n: "04", title: "28-Day Water Curing", desc: "Full immersion curing tanks. No shortcuts on strength." },
   { n: "05", title: "Batch Testing", desc: "3-edge bearing + hydrostatic test in our own QC lab." },
   { n: "06", title: "Quality Stamping & Dispatch", desc: "Marked, palletised and dispatched by own trailer fleet." },
 ];

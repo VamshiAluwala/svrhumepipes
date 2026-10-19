@@ -13,7 +13,7 @@ type Mode = "pipes" | "distance";
 // Base size table from RCC Hume Pipes product data
 const baseSizes = products[0].sizes;
 
-// Weight scaling factors per class (approximate — for on-page estimator).
+// Weight scaling factors per class (approximate, for on-page estimator).
 // Real quotation from sales, but this gives an accurate ballpark.
 const classFactor: Record<PipeClass, { weight: number }> = {
   NP2: { weight: 0.7 },
@@ -193,10 +193,10 @@ export function SizeEstimator() {
           {mode === "distance"
             ? `${distanceM} m ÷ ${spec.lengthM} m per pipe = ${spec.pipes} pipes. `
             : `Standard length ${spec.lengthM} m per pipe. `}
-          Approximate — final weight varies with wall reinforcement.
+          Approximate. Final weight varies with wall reinforcement.
         </div>
 
-        {/* Optional — makes the WhatsApp quote request easier to price (delivery distance) */}
+        {/* Optional, makes the WhatsApp quote request easier to price (delivery distance) */}
         <div className="grid grid-cols-2 gap-1.5">
           <input
             value={name}
@@ -224,7 +224,7 @@ export function SizeEstimator() {
           inputMode="tel"
           autoComplete="tel"
           maxLength={16}
-          placeholder="Phone — we'll call you back (optional)"
+          placeholder="Phone for a call back (optional)"
           aria-label="Phone number for a call back (optional)"
           className="w-full rounded-lg px-3 py-2.5 border border-steel-300 bg-white text-base sm:text-sm text-steel-900 placeholder-steel-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none"
         />
@@ -294,7 +294,7 @@ function Metric({
   );
 }
 
-// Selected pipe drawn to scale beside a 1.7 m person — 1 unit = 1 cm.
+// Selected pipe drawn to scale beside a 1.7 m person, 1 unit = 1 cm.
 // Circles are unit-radius and sized with transform so the change animates everywhere (Safari included).
 function SizeToScale({ diameterMM, wallMM }: { diameterMM: number; wallMM: number }) {
   const ground = 236;

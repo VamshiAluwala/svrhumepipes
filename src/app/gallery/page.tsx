@@ -27,21 +27,21 @@ type GalleryItem = { title: string; category: string; variant: any; src?: string
 
 const galleryData: Record<string, GalleryItem[]> = {
   Factory: [
-    { title: "Stockyard — Finished Pipes", category: "Factory", variant: "pipes", src: "/images/Gallary6.jpeg" },
+    { title: "Stockyard: Finished Pipes", category: "Factory", variant: "pipes", src: "/images/Gallary6.jpeg" },
     { title: "Storage Yard Overview", category: "Factory", variant: "factory", src: "/images/Gallary7.jpeg" },
     { title: "Pipe Handling & Crane Loading", category: "Factory", variant: "worker", src: "/images/Gallary8.jpeg" },
-    { title: "Hume Pipes — Site Dispatch", category: "Factory", variant: "pipes", src: "/images/Gallary1.jpeg" },
+    { title: "Hume Pipes: Site Dispatch", category: "Factory", variant: "pipes", src: "/images/Gallary1.jpeg" },
     { title: "Bulk Pipe Delivery", category: "Factory", variant: "pipes", src: "/images/Gallary2.jpeg" },
-    { title: "Loaded Trailer — Site Supply", category: "Factory", variant: "pipes", src: "/images/Gallary3.jpeg" },
-    { title: "Factory Signage — Shamirpet Unit", category: "Factory", variant: "factory", src: "/images/Gallary10.jpeg" },
+    { title: "Loaded Trailer: Site Supply", category: "Factory", variant: "pipes", src: "/images/Gallary3.jpeg" },
+    { title: "Factory Signage: Shamirpet Unit", category: "Factory", variant: "factory", src: "/images/Gallary10.jpeg" },
   ],
   Products: [
-    { title: "RCC Hume Pipes — Stockyard", category: "Products", variant: "pipes", src: "/images/product-1.jpg" },
-    { title: "Finished Hume Pipes — Yard", category: "Products", variant: "pipes", src: "/images/product-2.jpg" },
+    { title: "RCC Hume Pipes: Stockyard", category: "Products", variant: "pipes", src: "/images/product-1.jpg" },
+    { title: "Finished Hume Pipes: Yard", category: "Products", variant: "pipes", src: "/images/product-2.jpg" },
     { title: "Spun Concrete Poles & Pipes", category: "Products", variant: "pipes", src: "/images/Gallary9.jpeg" },
     { title: "Large-diameter Hume Pipes", category: "Products", variant: "pipes", src: "/images/Gallary4.jpeg" },
     { title: "NP3 Hume Pipes", category: "Products", variant: "pipes", src: "/images/Gallary5.jpeg" },
-    { title: "SVR Hume Pipes — RCC Pipes (IS 458:2003)", category: "Products", variant: "pipes", src: "/images/Gallary11.jpeg", zoom: true },
+    { title: "SVR Hume Pipes: RCC Pipes (IS 458:2003)", category: "Products", variant: "pipes", src: "/images/Gallary11.jpeg", zoom: true },
   ],
 };
 

@@ -28,8 +28,8 @@ export function generateMetadata({ params }: Params): Metadata {
   const p = getProduct(params.slug);
   if (!p) return {};
   return buildMetadata({
-    title: `${p.name} (Spun / Cement Pipes) – Hyderabad`,
-    description: `${p.name} — RCC spun and cement concrete pipes by SVR, Hyderabad. NP2, NP3 & NP4, 150–2200 mm, IS 458:2003. Price on request, delivery across Telangana.`,
+    title: `${p.name} (Spun / Cement Pipes) - Hyderabad`,
+    description: `${p.name}: RCC spun and cement concrete pipes by SVR, Hyderabad. NP2, NP3 & NP4, 150–2200 mm, IS 458:2003. Price on request, delivery across Telangana.`,
     path: `/products/${p.slug}`,
     keywords: [
       `${p.name.toLowerCase()} hyderabad`,
@@ -146,7 +146,7 @@ export default function ProductPage({ params }: Params) {
             <SectionHeading
               eyebrow="Specifications"
               title="Sizes & specifications"
-              subtitle={`Standard sizes for ${p.name} — custom diameters and lengths available on order.`}
+              subtitle={`Standard sizes for ${p.name}, custom diameters and lengths available on order.`}
             />
             <div className="mt-10 overflow-x-auto rounded-xl bg-white shadow border border-steel-200">
               <table className="w-full text-sm">
@@ -327,7 +327,7 @@ export default function ProductPage({ params }: Params) {
                 Get a quotation for {p.name}
               </h2>
               <p className="text-steel-700 mb-6">
-                Share your requirement — size, quantity, delivery location and expected
+                Share your requirement: size, quantity, delivery location and expected
                 delivery date. Our sales team will revert within 24 working hours with
                 pricing and availability.
               </p>

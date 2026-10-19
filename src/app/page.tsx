@@ -33,7 +33,7 @@ import { industries, whyChooseUs, homeFaqs } from "@/data/industries";
 const LAST_UPDATED = "2026-08-01";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Hume Pipes in Hyderabad – RCC, Spun & Cement Pipes",
+  title: "Hume Pipes in Hyderabad - RCC, Spun & Cement Pipes",
   description:
     "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
   path: "/",
@@ -57,7 +57,7 @@ export default function HomePage() {
         data={[
           webPageSchema({
             path: "/",
-            name: "Hume Pipes in Hyderabad – RCC, Spun & Cement Pipes | SVR Hume Pipes",
+            name: "Hume Pipes in Hyderabad - RCC, Spun & Cement Pipes | SVR Hume Pipes",
             description:
               "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
             dateModified: LAST_UPDATED,
@@ -72,7 +72,7 @@ export default function HomePage() {
       />
 
       {/* ══════════════════════════════════════════════════════════════
-          HERO — On-brand pipe cross-section pattern + Instant Estimator
+          HERO: On-brand pipe cross-section pattern + Instant Estimator
       ══════════════════════════════════════════════════════════════ */}
       <section className="relative isolate overflow-hidden bg-steel-950 text-white lg:min-h-[92vh] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-b from-steel-950 via-steel-950 to-brand-900/40" />
@@ -103,7 +103,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 lg:mt-5 text-base lg:text-lg text-ivory-200/85 leading-relaxed max-w-xl">
               <strong className="text-white">In short:</strong> SVR Hume Pipes manufactures
-              ISO-certified RCC hume pipes — NP2, NP3 &amp; NP4, 150–2200 mm to IS&nbsp;458:2003 —
+              ISO-certified RCC hume pipes (NP2, NP3 &amp; NP4, 150–2200 mm, IS&nbsp;458:2003),
               delivered 24×7 across Telangana. Trusted by contractors and government
               departments for <strong className="text-white">15+ years</strong>.
             </p>
@@ -129,7 +129,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* CTAs — full-width on mobile */}
+            {/* CTAs, full-width on mobile */}
             <div className="mt-5 lg:mt-7 flex flex-col gap-3">
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
@@ -157,7 +157,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Interactive Pipe Estimator — replaces fake production/enquiries */}
+          {/* Interactive Pipe Estimator, replaces fake production/enquiries */}
           <div className="relative">
             <div className="absolute -inset-8 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
             <div className="relative">
@@ -172,7 +172,7 @@ export default function HomePage() {
       <ClientsMarquee />
 
       {/* ══════════════════════════════════════════════════════════════
-          QUICK OVERVIEW — AI/answer-engine friendly summary + key facts
+          QUICK OVERVIEW: AI/answer-engine friendly summary + key facts
       ══════════════════════════════════════════════════════════════ */}
       <section className="bg-white py-12 lg:py-16 border-b border-ivory-300">
         <Container>
@@ -211,7 +211,7 @@ export default function HomePage() {
               </h3>
               <ul className="mt-5 space-y-3 text-sm text-steel-700">
                 {[
-                  ["Product", "RCC hume pipes — NP2, NP3 & NP4 (plain, socket & spigot)"],
+                  ["Product", "RCC hume pipes: NP2, NP3 & NP4 (plain, socket & spigot)"],
                   ["Sizes", "150 mm to 2200 mm diameter"],
                   ["Standard", "IS 458:2003 · ISO 9001 certified"],
                   ["Plant", "Lalgadi Malakpet, Medchal–Malkajgiri, Hyderabad"],
@@ -238,7 +238,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          STATS DASHBOARD — animated counters
+          STATS DASHBOARD: animated counters
       ══════════════════════════════════════════════════════════════ */}
       <section className="bg-ivory-100 py-12 lg:py-20">
         <Container>
@@ -260,7 +260,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          INTRO — editorial split
+          INTRO: editorial split
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-12 lg:py-28 bg-white">
         <Container className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -288,7 +288,7 @@ export default function HomePage() {
             <div className="mt-6 space-y-4 text-steel-700 leading-relaxed">
               <p>
                 Sri Venkateshwara Hume Pipes was founded in <strong>2009</strong> with a
-                single vision — manufacture the toughest, most reliable RCC concrete
+                single vision: manufacture the toughest, most reliable RCC concrete
                 pipes India has ever seen. Fifteen years later, we operate a modern
                 spun-casting facility in Lalgadi Malakpet producing over{" "}
                 <strong>20,000 pipes annually</strong> across NP2, NP3 and NP4 classes.
@@ -296,7 +296,7 @@ export default function HomePage() {
               <p>
                 Every pipe carries our ISO certification. Every batch is tested in our own QC
                 lab. Every dispatch leaves on our own trailer fleet. From municipal
-                storm drains to national highway culverts — SVR pipes hold the line.
+                storm drains to national highway culverts, SVR pipes hold the line.
               </p>
             </div>
             <div className="mt-8 grid grid-cols-2 gap-3">
@@ -323,14 +323,14 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          PRODUCTS TABBED — interactive dashboard
+          PRODUCTS TABBED: interactive dashboard
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-12 lg:py-24 bg-ivory-100">
         <Container>
           <SectionHeading
             eyebrow="Our Catalogue"
             title="ISO-certified RCC Hume Pipes"
-            subtitle="Spun-cast RCC hume pipes from 150 mm to 2200 mm in NP2, NP3 and NP4 classes — every pipe manufactured to IS 458:2003 with in-house QC lab certification."
+            subtitle="Spun-cast RCC hume pipes from 150 mm to 2200 mm in NP2, NP3 and NP4 classes. Every pipe is manufactured to IS 458:2003 with in-house QC lab certification."
           />
           <div className="mt-14">
             <Reveal><ProductTabs /></Reveal>
@@ -344,18 +344,18 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          NP2 vs NP3 vs NP4 — comparison / decision support (AEO)
+          NP2 vs NP3 vs NP4, comparison / decision support (AEO)
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-12 lg:py-24 bg-white">
         <Container>
           <div className="max-w-3xl">
             <div className="eyebrow">Choosing a class</div>
             <h2 className="mt-4 font-serif text-3xl lg:text-4xl font-bold text-steel-900 tracking-tightest">
-              NP2 vs NP3 vs NP4 hume pipes — which class do you need?
+              NP2 vs NP3 vs NP4 hume pipes: which class do you need?
             </h2>
             <p className="mt-4 text-steel-700 leading-relaxed">
               All three are reinforced, non-pressure RCC hume pipes made to IS&nbsp;458:2003.
-              The difference is load-bearing strength — choose the class from the traffic
+              The difference is load-bearing strength. Choose the class from the traffic
               and burial load the pipe will carry.
             </p>
           </div>
@@ -430,14 +430,14 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-          WHY CHOOSE US — editorial 3-col
+          WHY CHOOSE US: editorial 3-col
       ══════════════════════════════════════════════════════════════ */}
       <section className="py-12 lg:py-24 bg-white">
         <Container>
           <SectionHeading
             eyebrow="Why SVR"
             title="Six pillars of our craft"
-            subtitle="From ISO certification to 48-hour dispatch — everything is engineered for reliability that outlasts the project."
+            subtitle="From ISO certification to 48-hour dispatch, everything is engineered for reliability that outlasts the project."
           />
           <div className="mt-10 lg:mt-14 grid gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((w, i) => (
@@ -471,7 +471,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Industries We Serve"
             title="Powering South India's infrastructure"
-            subtitle="From municipal drains to national highways — trusted across 500+ major projects."
+            subtitle="From municipal drains to national highways, trusted across 500+ major projects."
             light
           />
           <div className="mt-10 lg:mt-14 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
@@ -530,7 +530,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Ratings & Reviews"
             title="See what our customers say"
-            subtitle="Read reviews of SVR Hume Pipes on Google, IndiaMART and JustDial — and leave one after your delivery."
+            subtitle="Read reviews of SVR Hume Pipes on Google, IndiaMART and JustDial, and leave one after your delivery."
           />
           <div className="mt-14">
             <Reveal><ReviewStats /></Reveal>

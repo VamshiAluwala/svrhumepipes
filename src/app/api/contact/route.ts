@@ -22,10 +22,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
-  // Honeypot — silently succeed for bots
+  // Honeypot, silently succeed for bots
   if (body.website) return NextResponse.json({ ok: true });
 
-  // Email is optional — estimator callback leads only collect a phone number.
+  // Email is optional, estimator callback leads only collect a phone number.
   const { name, phone, email = "", message } = body;
   if (!name || !phone || !message) {
     return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     source: req.headers.get("referer") ?? "direct",
   };
 
-  // Fan out to all channels in parallel — do not block user response on failures
+  // Fan out to all channels in parallel, do not block user response on failures
   const results = await Promise.allSettled([
     sendEmail(lead),
     sendToSheet(lead),

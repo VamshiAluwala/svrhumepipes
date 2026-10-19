@@ -8,11 +8,11 @@ import { CheckIcon, PhoneIcon, WhatsAppIcon } from "@/components/Icons";
 import { faqSchema, webPageSchema } from "@/lib/schema";
 import { site, telLink, whatsappLink } from "@/lib/site";
 
-// Telugu landing page — for Telugu-language ads and local contractors / site supervisors.
+// Telugu landing page, for Telugu-language ads and local contractors / site supervisors.
 // Quote messages stay in English so the sales team reads them the same way as other leads.
 
 export const metadata: Metadata = buildMetadata({
-  title: "హైదరాబాద్‌లో RCC హ్యూమ్ పైపులు – తయారీదారు",
+  title: "హైదరాబాద్‌లో RCC హ్యూమ్ పైపులు - తయారీదారు",
   description:
     "ISO సర్టిఫైడ్ NP2, NP3, NP4 RCC హ్యూమ్ పైపులు (150–2200 mm), IS 458:2003 ప్రమాణాల ప్రకారం. తెలంగాణ అంతటా 24×7 డెలివరీ. ఇప్పుడే కొటేషన్ పొందండి.",
   path: "/te",
@@ -25,7 +25,7 @@ const waMsg =
   "Hi SVR Hume Pipes, I need a quotation for RCC hume pipes. Please share pricing and availability. (Telugu page)";
 
 const facts = [
-  ["ఉత్పత్తి", "RCC హ్యూమ్ పైపులు — NP2, NP3 & NP4"],
+  ["ఉత్పత్తి", "RCC హ్యూమ్ పైపులు: NP2, NP3 & NP4"],
   ["సైజులు", "150 mm నుంచి 2200 mm వ్యాసం"],
   ["ప్రమాణం", "IS 458:2003 · ISO 9001 సర్టిఫైడ్"],
   ["ఫ్యాక్టరీ", "లాల్‌గడి మలక్‌పేట్, మేడ్చల్–మల్కాజ్‌గిరి, హైదరాబాద్"],
@@ -35,7 +35,7 @@ const facts = [
 
 const reasons = [
   ["ISO సర్టిఫైడ్ నాణ్యత", "ప్రతి పైపు IS 458:2003 ప్రకారం తయారవుతుంది. బ్యాచ్ టెస్ట్ సర్టిఫికెట్లు అందుబాటులో ఉన్నాయి."],
-  ["ఫ్యాక్టరీ నుంచి నేరుగా ధర", "మధ్యవర్తులు లేరు — పెద్ద ఆర్డర్లకు ప్రత్యేక తగ్గింపు."],
+  ["ఫ్యాక్టరీ నుంచి నేరుగా ధర", "మధ్యవర్తులు లేరు, పెద్ద ఆర్డర్లకు ప్రత్యేక తగ్గింపు."],
   ["48 గంటల్లో డిస్పాచ్", "సొంత ట్రైలర్లతో డెలివరీ, సైట్‌లో హైడ్రా క్రేన్‌తో అన్‌లోడింగ్."],
   ["సొంత QC ల్యాబ్", "కంప్రెషన్, 3-ఎడ్జ్ బేరింగ్, హైడ్రోస్టాటిక్ టెస్టులు మా ప్లాంట్‌లోనే."],
 ];
@@ -47,11 +47,11 @@ const faqs = [
   },
   {
     q: "కనీస ఆర్డర్ ఎంత?",
-    a: "కనీస పరిమితి లేదు — ఒక ట్రక్ లోడ్ నుంచి పెద్ద ప్రాజెక్టుల బల్క్ సప్లై వరకు అందిస్తాం.",
+    a: "కనీస పరిమితి లేదు, ఒక ట్రక్ లోడ్ నుంచి పెద్ద ప్రాజెక్టుల బల్క్ సప్లై వరకు అందిస్తాం.",
   },
   {
     q: "కొటేషన్ ఎలా పొందాలి?",
-    a: `${site.phoneDisplay} కు కాల్ చేయండి లేదా WhatsApp చేయండి. పైపు సైజు, క్లాస్, పరిమాణం మరియు డెలివరీ ప్రాంతం చెప్పండి — 24 పని గంటల్లో ధర పంపుతాం.`,
+    a: `${site.phoneDisplay} కు కాల్ చేయండి లేదా WhatsApp చేయండి. పైపు సైజు, క్లాస్, పరిమాణం మరియు డెలివరీ ప్రాంతం చెప్పండి, 24 పని గంటల్లో ధర పంపుతాం.`,
   },
 ];
 
@@ -90,7 +90,7 @@ export default function TeluguPage() {
               </span>
             </h1>
             <p className="mt-5 text-base lg:text-lg text-ivory-200/85 leading-relaxed max-w-xl">
-              SVR హ్యూమ్ పైప్స్ — ISO సర్టిఫైడ్ NP2, NP3 & NP4 పైపులు, 150 mm నుంచి 2200 mm వరకు,
+              SVR హ్యూమ్ పైప్స్, ISO సర్టిఫైడ్ NP2, NP3 & NP4 పైపులు, 150 mm నుంచి 2200 mm వరకు,
               IS&nbsp;458:2003 ప్రకారం తయారీ. తెలంగాణ అంతటా 24×7 డెలివరీ. 2009 నుంచి కాంట్రాక్టర్లు
               మరియు ప్రభుత్వ విభాగాల నమ్మకం.
             </p>

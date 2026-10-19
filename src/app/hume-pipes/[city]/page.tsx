@@ -25,7 +25,7 @@ export function generateMetadata({ params }: Params): Metadata {
   const loc = getLocation(params.city);
   if (!loc) return {};
   return buildMetadata({
-    title: `Hume Pipes in ${loc.city} – RCC & Cement Pipes Supplier`,
+    title: `Hume Pipes in ${loc.city} - RCC & Cement Pipes Supplier`,
     description: `Hume pipes near ${loc.city}: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. Delivered to ${loc.city}${loc.district !== loc.city ? `, ${loc.district}` : ""} from our Hyderabad plant. Call 99495 19444.`,
     path: `/hume-pipes/${loc.slug}`,
     keywords: [
@@ -167,7 +167,7 @@ export default function LocationPage({ params }: Params) {
       {/* LOCAL FAQ */}
       <section className="py-12 lg:py-20 bg-ivory-100">
         <Container>
-          <SectionHeading eyebrow="FAQ" title={`Hume pipes in ${loc.city} — questions`} />
+          <SectionHeading eyebrow="FAQ" title={`Hume pipes in ${loc.city}: common questions`} />
           <div className="mt-10 max-w-3xl mx-auto divide-y divide-ivory-300 border border-ivory-300 bg-white">
             {faqs.map((f) => (
               <div key={f.q} className="p-6">
@@ -183,7 +183,7 @@ export default function LocationPage({ params }: Params) {
       <section className="py-12 lg:py-20 bg-white" id="inquiry">
         <Container className="max-w-3xl">
           <div className="rounded-2xl border border-ivory-300 bg-white shadow-classic p-5 sm:p-6 lg:p-8">
-            <ContactForm productContext={`Hume Pipes — ${loc.city}`} />
+            <ContactForm productContext={`Hume Pipes, ${loc.city}`} />
           </div>
         </Container>
       </section>

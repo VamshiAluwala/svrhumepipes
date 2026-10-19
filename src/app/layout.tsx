@@ -14,7 +14,7 @@ import {
 import { site } from "@/lib/site";
 import { siteKeywords } from "@/lib/seo";
 
-// Satoshi — self-hosted (Fontshare). Same typeface used on agentorix.in.
+// Satoshi, self-hosted (Fontshare). Same typeface used on agentorix.in.
 const satoshi = localFont({
   src: [
     { path: "../fonts/Satoshi-Light.woff2", weight: "300", style: "normal" },
@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
-        {/* Google tag (gtag.js) — loaded after hydration so it never blocks render */}
+        {/* Google tag (gtag.js), loaded after hydration so it never blocks render */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5EDHD5FBTS"
           strategy="afterInteractive"
