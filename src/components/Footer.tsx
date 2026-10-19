@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-steel-950 text-ivory-200 relative border-t border-white/5">
 
-      <Container className="relative py-12 lg:py-16 grid gap-10 grid-cols-2 lg:grid-cols-4">
+      <Container className="relative py-12 lg:py-16 grid gap-10 grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.3fr]">
         <div className="col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3 mb-5">
             <Image src="/images/logo.png" alt="" width={48} height={48} className="h-12 w-12 rounded-xl bg-white p-1 object-contain" />
@@ -42,20 +42,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <h3 className="text-white font-serif text-lg font-semibold mb-2">Explore</h3>
-          <ul className="space-y-2.5 text-sm text-ivory-200/80">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 lg:grid-cols-1 text-sm text-ivory-200/80">
             <li><Link href="/" className="hover:text-brand-400 transition">Home</Link></li>
             <li><Link href="/about" className="hover:text-brand-400 transition">About Us</Link></li>
-            <li><Link href="/products" className="hover:text-brand-400 transition">All Products</Link></li>
-            <li><Link href="/gallery" className="hover:text-brand-400 transition">Gallery</Link></li>
-            <li><Link href="/contact" className="hover:text-brand-400 transition">Contact Us</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-white font-serif text-lg font-semibold mb-2">Our Products</h3>
-          <ul className="space-y-2.5 text-sm text-ivory-200/80">
+            <li><Link href="/products" className="hover:text-brand-400 transition">Products</Link></li>
             {products.map((p) => (
               <li key={p.slug}>
                 <Link href={`/products/${p.slug}`} className="hover:text-brand-400 transition">
@@ -63,6 +55,9 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li><Link href="/gallery" className="hover:text-brand-400 transition">Gallery</Link></li>
+            <li><Link href="/contact" className="hover:text-brand-400 transition">Contact Us</Link></li>
+            <li><Link href="/te" className="hover:text-brand-400 transition">తెలుగు</Link></li>
           </ul>
         </div>
 

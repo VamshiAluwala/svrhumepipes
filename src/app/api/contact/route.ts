@@ -11,6 +11,7 @@ type Payload = {
   message?: string;
   product?: string;
   productContext?: string;
+  attribution?: string; // where the visitor came from, see lib/attribution.ts
   website?: string; // honeypot
 };
 
@@ -50,6 +51,7 @@ export async function POST(req: Request) {
     product: (body.product ?? body.productContext ?? "General enquiry").trim(),
     message: message.trim(),
     source: req.headers.get("referer") ?? "direct",
+    cameFrom: String(body.attribution ?? "").slice(0, 300) || "Direct / unknown",
   };
 
   // Fan out to all channels in parallel, do not block user response on failures

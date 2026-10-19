@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Container } from "./Container";
 import { site, telLink, mailLink } from "@/lib/site";
 import { cn } from "@/lib/cn";
+import { captureSource } from "@/lib/attribution";
 import { ArrowIcon, MailIcon, PhoneIcon } from "./Icons";
 
 const nav = [
@@ -24,6 +25,8 @@ export function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(captureSource, []); // remember where this visitor came from (ad keyword, search...)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

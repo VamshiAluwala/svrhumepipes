@@ -7,6 +7,7 @@ export type Lead = {
   product: string;
   message: string;
   source: string;
+  cameFrom: string; // ad keyword / search / direct, from lib/attribution.ts
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -62,6 +63,7 @@ function renderEmailHtml(l: Lead) {
         ${row("🏢 Company", l.company || "-")}
         ${row("🔧 Product interest", l.product)}
         ${row("📍 Source page", l.source)}
+        ${row("🎯 Came from", escape(l.cameFrom))}
       </table>
       <div style="margin-top:20px;padding:16px;background:#f4f4f5;border-left:4px solid #0284c7;border-radius:4px">
         <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.05em;color:#71717a;margin-bottom:8px">Requirement</div>
@@ -95,6 +97,7 @@ Email:    ${l.email}
 Company:  ${l.company || "-"}
 Product:  ${l.product}
 Source:   ${l.source}
+Came from: ${l.cameFrom}
 
 Requirement:
 ${l.message}
@@ -146,6 +149,7 @@ export async function sendWhatsApp(lead: Lead) {
     `✉ ${lead.email || "-"}`,
     `🏢 ${lead.company || "-"}`,
     `🔧 ${lead.product}`,
+    `🎯 ${lead.cameFrom}`,
     ``,
     `💬 ${lead.message}`,
     ``,

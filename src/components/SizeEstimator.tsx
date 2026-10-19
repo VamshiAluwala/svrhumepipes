@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { products } from "@/data/products";
 import { site, telLink, whatsappLink } from "@/lib/site";
 import { PhoneIcon, WhatsAppIcon } from "./Icons";
+import { leadSource } from "@/lib/attribution";
 
 const classes = ["NP2", "NP3", "NP4"] as const;
 type PipeClass = (typeof classes)[number];
@@ -246,6 +247,7 @@ export function SizeEstimator() {
                 phone: phone.trim(),
                 product: `${cls} ${spec.diameterMM} mm (estimator)`,
                 message: waMsg,
+                attribution: leadSource(),
               }),
             }).catch(() => {});
             window.gtag?.("event", "generate_lead", { form: "estimator", page_path: location.pathname });

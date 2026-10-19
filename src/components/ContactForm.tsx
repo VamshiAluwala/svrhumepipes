@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { whatsappLink } from "@/lib/site";
+import { leadSource } from "@/lib/attribution";
 import { CheckIcon, WhatsAppIcon } from "./Icons";
 
 type Props = {
@@ -28,7 +29,7 @@ export function ContactForm({ compact = false, productContext, heading, subheadi
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, productContext }),
+        body: JSON.stringify({ ...data, productContext, attribution: leadSource() }),
       });
       if (!res.ok) throw new Error("Failed to send");
       setStatus("success");
