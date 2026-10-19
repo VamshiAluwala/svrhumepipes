@@ -33,9 +33,9 @@ import { industries, whyChooseUs, homeFaqs } from "@/data/industries";
 const LAST_UPDATED = "2026-08-01";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Hume Pipes in Hyderabad – RCC Pipe Manufacturer",
+  title: "Hume Pipes in Hyderabad – RCC, Spun & Cement Pipes",
   description:
-    "Top RCC hume pipe manufacturer in Hyderabad. ISO-certified NP2, NP3 & NP4 pipes (150–2200 mm) to IS 458:2003, with 24×7 dispatch across Telangana.",
+    "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
   path: "/",
   languages: { "en-IN": "/", "te-IN": "/te", "x-default": "/" },
   keywords: [
@@ -57,16 +57,16 @@ export default function HomePage() {
         data={[
           webPageSchema({
             path: "/",
-            name: "Hume Pipes in Hyderabad – RCC Pipe Manufacturer | SVR Hume Pipes",
+            name: "Hume Pipes in Hyderabad – RCC, Spun & Cement Pipes | SVR Hume Pipes",
             description:
-              "Top RCC hume pipe manufacturer in Hyderabad. ISO-certified NP2, NP3 & NP4 pipes (150–2200 mm) to IS 458:2003, with 24×7 dispatch across Telangana.",
+              "Hume pipe manufacturer in Hyderabad: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. 24×7 delivery across Telangana. Call 99495 19444.",
             dateModified: LAST_UPDATED,
           }),
           breadcrumbSchema([{ name: "Home", path: "/" }]),
           faqSchema(homeFaqs),
           serviceSchema(
             "RCC Hume Pipes Manufacturing & Supply",
-            "Manufacture and supply of ISO-certified RCC hume pipes across Telangana, Andhra Pradesh and Karnataka."
+            "Manufacture and supply of ISO-certified RCC hume pipes (spun concrete / cement pipes) across all districts of Telangana, Andhra Pradesh and Karnataka."
           ),
         ]}
       />

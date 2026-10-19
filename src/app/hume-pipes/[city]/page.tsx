@@ -25,8 +25,8 @@ export function generateMetadata({ params }: Params): Metadata {
   const loc = getLocation(params.city);
   if (!loc) return {};
   return buildMetadata({
-    title: `Hume Pipes in ${loc.city} – RCC Hume Pipe Supplier`,
-    description: `Buy ISO-certified RCC hume pipes in ${loc.city}, ${loc.district}. SVR Hume Pipes supplies NP2, NP3 & NP4 pipes (150mm–2200mm) to ${loc.city} for drainage, sewer & irrigation. IS 458:2003. Delivered from Hyderabad. ☎ +91 99495 19444`,
+    title: `Hume Pipes in ${loc.city} – RCC & Cement Pipes Supplier`,
+    description: `Hume pipes near ${loc.city}: RCC spun & cement pipes, NP2/NP3/NP4, 150–2200 mm, IS 458:2003. Delivered to ${loc.city}${loc.district !== loc.city ? `, ${loc.district}` : ""} from our Hyderabad plant. Call 99495 19444.`,
     path: `/hume-pipes/${loc.slug}`,
     keywords: [
       `hume pipes in ${loc.city.toLowerCase()}`,
@@ -34,6 +34,9 @@ export function generateMetadata({ params }: Params): Metadata {
       `hume pipe supplier ${loc.city.toLowerCase()}`,
       `hume pipe price ${loc.city.toLowerCase()}`,
       `concrete pipes ${loc.city.toLowerCase()}`,
+      `cement pipes ${loc.city.toLowerCase()}`,
+      `spun pipes ${loc.city.toLowerCase()}`,
+      `hume pipes near ${loc.city.toLowerCase()}`,
     ],
   });
 }
@@ -69,7 +72,8 @@ export default function LocationPage({ params }: Params) {
           breadcrumbSchema(crumbs),
           serviceSchema(
             `RCC Hume Pipe Supply in ${loc.city}`,
-            `Manufacture and supply of ISO-certified RCC hume pipes to ${loc.city}, ${loc.district}, Telangana.`
+            `Manufacture and supply of ISO-certified RCC hume pipes (spun / cement concrete pipes) to ${loc.city}, ${loc.district}, Telangana.`,
+            loc.city
           ),
           faqSchema(faqs),
         ]}

@@ -26,11 +26,10 @@ export function buildMetadata({
   locale = "en_IN",
 }: PageSEO): Metadata {
   const url = `${site.url}${path}`;
-  const fullTitle =
-    path === "/" ? `${title} | ${site.name}` : `${title} | ${site.name} Hyderabad`;
+  const fullTitle = `${title} | ${site.name}`;
 
   return {
-    title: fullTitle,
+    title: { absolute: fullTitle },
     description,
     keywords: [...site.keywords, ...keywords].join(", "),
     metadataBase: new URL(site.url),

@@ -12,9 +12,9 @@ import { SpunPipe } from "@/components/SpunPipe";
 import { CheckIcon } from "@/components/Icons";
 
 export const metadata: Metadata = buildMetadata({
-  title: "RCC Hume Pipes - Sizes, Classes & Specifications",
+  title: "RCC Hume Pipes & Spun Pipes – Sizes, Classes, Specs",
   description:
-    "ISO-certified RCC hume pipes by SVR Hume Pipes Hyderabad — NP2, NP3 and NP4 classes, 150 mm to 2200 mm diameter, IS 458:2003 compliant. View sizes, wall thickness and weights.",
+    "RCC hume pipes (spun concrete / cement pipes) by SVR Hyderabad — NP2, NP3 & NP4, 150–2200 mm, IS 458:2003. Sizes, wall thickness and weights; price on request.",
   path: "/products",
   keywords: [
     "rcc hume pipes price hyderabad",

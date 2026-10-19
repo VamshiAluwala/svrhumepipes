@@ -1,5 +1,29 @@
 import { site } from "./site";
 
+const sameAs = [...Object.values(site.social), ...site.profiles];
+
+// Telangana (state + all 33 districts), then the neighbouring states we deliver to.
+const areaServed = [
+  { "@type": "State", name: "Telangana" },
+  ...site.telanganaDistricts.map((d) => ({
+    "@type": "AdministrativeArea",
+    name: `${d} district`,
+    containedInPlace: { "@type": "State", name: "Telangana" },
+  })),
+  { "@type": "State", name: "Andhra Pradesh" },
+  { "@type": "State", name: "Karnataka" },
+];
+
+const knowsAbout = [
+  ...site.productNames,
+  "NP2 Hume Pipes",
+  "NP3 Hume Pipes",
+  "NP4 Hume Pipes",
+  "Storm Water Drainage Pipes",
+  "Sewer Pipes",
+  "IS 458:2003 Precast Concrete Pipes",
+];
+
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -15,23 +39,9 @@ export function organizationSchema() {
     foundingDate: site.founded,
     email: site.email,
     telephone: site.phone,
-    knowsAbout: [
-      "RCC Hume Pipes",
-      "NP2 Hume Pipes",
-      "NP3 Hume Pipes",
-      "NP4 Hume Pipes",
-      "Spun Concrete Pipes",
-      "Culvert Pipes",
-      "Storm Water Drainage Pipes",
-      "Sewer Pipes",
-      "IS 458:2003 Precast Concrete Pipes",
-    ],
-    keywords: [...site.keywords].join(", "),
-    areaServed: site.serviceAreas.map((a) => ({
-      "@type": "AdministrativeArea",
-      name: a,
-    })),
-    sameAs: Object.values(site.social),
+    knowsAbout,
+    areaServed,
+    sameAs,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -55,7 +65,7 @@ export function organizationSchema() {
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Manufacturer"],
+    "@type": "LocalBusiness",
     "@id": `${site.url}/#localbusiness`,
     name: site.legalName,
     alternateName: [site.name, "SVR RCC Hume Pipes"],
@@ -65,8 +75,8 @@ export function localBusinessSchema() {
     email: site.email,
     priceRange: "₹₹",
     slogan: site.tagline,
-    keywords: [...site.keywords].join(", "),
     description: site.description,
+    knowsAbout,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -97,8 +107,21 @@ export function localBusinessSchema() {
         closes: "23:59",
       },
     ],
-    areaServed: site.serviceAreas.map((a) => ({ "@type": "City", name: a })),
-    sameAs: Object.values(site.social),
+    areaServed,
+    sameAs,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "RCC Hume Pipes (Spun / Cement Concrete Pipes)",
+      itemListElement: ["NP2", "NP3", "NP4"].map((cls) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Product",
+          name: `${cls} RCC Hume Pipes`,
+          alternateName: [`${cls} RCC Pipes`, `${cls} Spun Pipes`, `${cls} Cement Pipes`],
+          description: `${cls} class spun-cast RCC hume pipes, 150–2200 mm, to IS 458:2003.`,
+        },
+      })),
+    },
   };
 }
 
@@ -181,6 +204,7 @@ export function productSchema(p: ProductInput) {
     "@type": "Product",
     "@id": `${site.url}/products/${p.slug}#product`,
     name: p.name,
+    alternateName: site.productNames.filter((n) => n !== p.name),
     description: p.description,
     category: p.category,
     image: (p.images && p.images.length ? p.images : [`${site.url}/og/default.jpg`]).map(
@@ -228,13 +252,15 @@ export function faqSchema(faqs: { q: string; a: string }[]) {
   };
 }
 
-export function serviceSchema(name: string, description: string) {
+export function serviceSchema(name: string, description: string, area?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: name,
     provider: { "@id": `${site.url}/#organization` },
-    areaServed: site.serviceAreas.map((a) => ({ "@type": "City", name: a })),
+    areaServed: area
+      ? { "@type": "City", name: area, containedInPlace: { "@type": "State", name: "Telangana" } }
+      : areaServed,
     description,
   };
 }

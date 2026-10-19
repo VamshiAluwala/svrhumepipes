@@ -37,22 +37,33 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/svrhumepipes",
   },
-  serviceAreas: [
-    "Hyderabad",
-    "Secunderabad",
-    "Rangareddy",
-    "Medchal",
-    "Sangareddy",
-    "Warangal",
-    "Karimnagar",
-    "Nizamabad",
-    "Vijayawada",
-    "Guntur",
-    "Kurnool",
-    "Anantapur",
-    "Telangana",
-    "Andhra Pradesh",
-    "Karnataka",
+  // Other listings of this business — used as schema.org sameAs so search and AI engines
+  // connect them to one entity. Keep name, address and phone identical on all of them.
+  profiles: [
+    "https://maps.app.goo.gl/DhAG1fMNv9W6rnBp9",
+    "https://www.indiamart.com/venkateswara-humepipes/profile.html",
+    "https://www.justdial.com/Hyderabad/Venkateshwara-Hume-Pipes-Majeedpur/040PXX40-XX40-200130090257-F4F7_BZDET",
+  ],
+  // What buyers call the product — all true synonyms for spun-cast RCC pipes.
+  productNames: [
+    "Hume Pipes",
+    "RCC Pipes",
+    "RCC Hume Pipes",
+    "Spun Pipes",
+    "RCC Spun Pipes",
+    "Spun Concrete Pipes",
+    "Cement Pipes",
+    "Cement Concrete Pipes",
+    "Concrete Pipes",
+    "Culvert Pipes",
+  ],
+  telanganaDistricts: [
+    "Adilabad", "Bhadradri Kothagudem", "Hanumakonda", "Hyderabad", "Jagtial", "Jangaon",
+    "Jayashankar Bhupalpally", "Jogulamba Gadwal", "Kamareddy", "Karimnagar", "Khammam",
+    "Kumuram Bheem Asifabad", "Mahabubabad", "Mahabubnagar", "Mancherial", "Medak",
+    "Medchal-Malkajgiri", "Mulugu", "Nagarkurnool", "Nalgonda", "Narayanpet", "Nirmal",
+    "Nizamabad", "Peddapalli", "Rajanna Sircilla", "Ranga Reddy", "Sangareddy", "Siddipet",
+    "Suryapet", "Vikarabad", "Wanaparthy", "Warangal", "Yadadri Bhuvanagiri",
   ],
   keywords: [
     "hume pipes",
@@ -82,6 +93,16 @@ export const site = {
     "SVR RCC hume pipes",
     "Sri Venkateshwara hume pipes",
     "venkateshwara hume pipes hyderabad",
+    "hume pipes near me",
+    "rcc pipes near me",
+    "cement pipes near me",
+    "spun pipes",
+    "spun pipes hyderabad",
+    "rcc spun pipes",
+    "cement pipes",
+    "cement pipes telangana",
+    "rcc pipes telangana",
+    "hume pipes manufacturer telangana",
   ],
 } as const;
 
